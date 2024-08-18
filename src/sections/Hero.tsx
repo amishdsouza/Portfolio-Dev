@@ -24,11 +24,10 @@ export const Hero = () => {
               I'm a Software and Web Developer
             </p>
             <div className="flex gap-1 items-center mt-[30px]">
-              <button className="btn btn-primary"> Explore My Work </button>
-              {/* <button className="btn btn-text">
-                <span> Learn more about me </span>
+              <button className="btn btn-primary">
+                Explore My Work
                 <ArrowIcon className="h-5 w-5" />
-              </button> */}
+              </button>
             </div>
           </div>
 
