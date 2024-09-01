@@ -1,4 +1,4 @@
-import { Header } from "@/sections/Header-old";
+import { Header } from "@/sections/Header";
 import { Hero } from "@/sections/Hero";
 import { LogoTicker } from "@/sections/LogoTicker";
 import { About } from "@/sections/About";
