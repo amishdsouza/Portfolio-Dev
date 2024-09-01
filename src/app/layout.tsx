@@ -14,8 +14,8 @@ const calistoga = Calistoga({
 
 // Metadata for the page
 export const metadata: Metadata = {
-  title: "Light SaaS Landing Page",
-  description: "Template created by Frontend Tribe",
+  title: "Amish Dickson Dsouza",
+  description: "Template created by Amish",
 };
 
 export default function RootLayout({
