@@ -1,52 +1,118 @@
-import { brainwaveSymbol } from "../assets";
-import { collabApps } from "../constants";
+import Image from "next/image";
+import HTML from "@/assets/Icons/html.png";
+import CSS from "@/assets/Icons/css.png";
+import JS from "@/assets/Icons/js.png";
+import NodeJS from "@/assets/Icons/nodejs.png";
+import BOOTSTRAP from "@/assets/Icons/bootstrap.png";
+import TAILWIND from "@/assets/Icons/tailwind.png";
+import ReactLogo from "@/assets/Icons/react.png";
+import REST from "@/assets/Icons/restful.jpg";
+
+const iconList = [
+  {
+    id: "0",
+    title: "HTML",
+    icon: HTML,
+    width: 26,
+    height: 36,
+    alt: "HTML Logo",
+  },
+  {
+    id: "1",
+    title: "CSS",
+    icon: CSS,
+    width: 26,
+    height: 36,
+    alt: "CSS Logo",
+  },
+  {
+    id: "2",
+    title: "JavaScript",
+    icon: JS,
+    width: 26,
+    height: 36,
+    alt: "JavaScript Logo",
+  },
+  {
+    id: "3",
+    title: "React",
+    icon: ReactLogo,
+    width: 26,
+    height: 36,
+    alt: "React Logo",
+  },
+  {
+    id: "4",
+    title: "NodeJS",
+    icon: NodeJS,
+    width: 26,
+    height: 36,
+    alt: "NodeJS Logo",
+  },
+  {
+    id: "5",
+    title: "Tailwind",
+    icon: TAILWIND,
+    width: 26,
+    height: 36,
+    alt: "Tailwind CSS Logo",
+  },
+  {
+    id: "6",
+    title: "Bootstrap",
+    icon: BOOTSTRAP,
+    width: 26,
+    height: 36,
+    alt: "Bootstrap Logo",
+  },
+  {
+    id: "7",
+    title: "REST",
+    icon: REST,
+    width: 26,
+    height: 36,
+    alt: "REST API Logo",
+  },
+];
 
 const Logo = () => {
-  return (
-    <div className="container lg:flex">
-      <div className="lg:ml-auto xl:w-[38rem] mt-20 py-20">
-        <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale:75 md:scale-100">
-          <div className="flex w-60 aspect-square m-auto border border-n-6 rounded-full">
-            <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full">
-              <div className="flex items-center justify-center w-full h-full bg-n-8 rounded-full">
-                <img
-                  src={brainwaveSymbol}
-                  width={48}
-                  height={48}
-                  alt="brainwave"
-                />
-              </div>
-            </div>
-          </div>
+  const numberOfIcons = iconList.length;
+  const angle = 360 / numberOfIcons;
 
-          <ul>
-            {collabApps.map((app, index) => (
-              <li
-                key={app.id}
-                className={`absolute top-0 left-1/2 h-1/2 -ml-[1.6rem] origin-bottom rotate-${
-                  index * 45
-                }`}
-              >
-                <div
-                  className={`relative -top-[1.6rem] flex flex-col items-center w-[3.2rem] h-[3.2rem] bg-n-7 border border-n-1/15 rounded-xl -rotate-${
-                    index * 45
-                  }`}
-                >
-                  <img
-                    className="m-auto"
-                    width={app.width}
-                    height={app.height}
-                    alt={app.title}
-                    src={app.icon}
-                  />
-                  <span className="mt-1 text-center text-sm text-n-8">
-                    {app.title}
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
+  return (
+    <div className="bg-black container lg:flex justify-center items-center h-screen">
+      <div className="relative w-[22rem] aspect-square border border-n-6 rounded-full flex justify-center items-center">
+        <div className="absolute w-32 h-32 bg-purple-700 rounded-full flex justify-center items-center">
+          {/* Center Logo */}
+          <Image src={ReactLogo} width={64} height={64} alt="Center Logo" />
         </div>
+        <ul className="absolute inset-0">
+          {iconList.map((app, index) => (
+            <li
+              key={app.id}
+              className="absolute top-1/2 left-1/2 flex justify-center items-center"
+              style={{
+                transform: `rotate(${index * angle}deg) translateY(-10rem)`,
+              }}
+            >
+              <div
+                className="flex flex-col items-center bg-gray-800 p-2 rounded-full"
+                style={{
+                  transform: `rotate(${-index * angle}deg)`,
+                }}
+              >
+                <Image
+                  className="m-auto"
+                  width={app.width}
+                  height={app.height}
+                  alt={app.alt}
+                  src={app.icon}
+                />
+                <span className="mt-1 text-xs text-white">{app.title}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
