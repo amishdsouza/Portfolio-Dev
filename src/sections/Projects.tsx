@@ -1,12 +1,53 @@
+//projectImages
 import GuessNumber from "@/assets/Projects/GuessNumber.png";
 import DiceGame from "@/assets/Projects/DiceGame.png";
 import MapMiles from "@/assets/Projects/MapMiles.png";
+import EHU from "@/assets/Projects/EHU_CX.jpg";
+import JBart from "@/assets/Projects/Jbart.jpg";
+import Intertek from "@/assets/Projects/intertek.jpg";
+
 import Image from "next/image";
 import ArrowUpRightIcon from "@/assets/arrow-right.svg";
 import CheckIcon from "@/assets/check.svg";
-import GrainImage from "@/assets/grain.jpg";
+import { Card } from "@/components/Card";
 
 const portfolioProjects = [
+  {
+    company: "Edge Hill University",
+    year: "2022",
+    title: "Student Admission Portal",
+    results: [
+      { title: "Enhanced user engagement by 30%" },
+      { title: "Improved algorithm efficiency by 20%" },
+      { title: "Reduced bounce rate by 15%" },
+    ],
+    link: "https://edgehillacuktest.elluciancrmrecruit.com/Apply/",
+    image: EHU,
+  },
+  {
+    company: "Edge Hill University",
+    year: "2022",
+    title: "Jbart",
+    results: [
+      { title: "Enhanced user engagement by 30%" },
+      { title: "Improved algorithm efficiency by 20%" },
+      { title: "Reduced bounce rate by 15%" },
+    ],
+    link: "",
+    image: JBart,
+  },
+  {
+    company: "Novigo Solutions",
+    year: "2022",
+    title: "Intertek Project",
+    results: [
+      { title: "Enhanced user engagement by 30%" },
+      { title: "Improved algorithm efficiency by 20%" },
+      { title: "Reduced bounce rate by 15%" },
+    ],
+    link: "https://www.intertek.com/about/",
+    image: Intertek,
+  },
   {
     company: "Acme Corp",
     year: "2022",
@@ -49,28 +90,13 @@ export const Projects = () => {
   return (
     <section className="pb-16 lg:py-24">
       <div className="container">
-        <div className="flex justify-center">
-          <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text">
-            real world results
-          </p>
-        </div>
-        <h2 className="font-serif text-3xl md:text-5xl text-center mt-6">
-          Featured
-        </h2>
-        <p className="text-center md:text-lg text-black/60 mt-4 max-w-md mx-auto lg:text-xl">
-          BIG BIG TEXT HERE GOES HREER REREER
-        </p>
         <div className="mt-10 md:mt-20 flex flex-col  gap-20">
-          {portfolioProjects.map((project) => (
-            <div
+          {portfolioProjects.map((project, projectIndex) => (
+            <Card
               key={project.title}
-              className="bg-gray-800 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8  md:pt-12 md:px-10 after:pointer-events-none lg:pt-16 lg:px-20"
+              className="px-8 pt-8 pb-0 md:pt-12 md:px-10  lg:pt-16 lg:px-20 sticky"
+              style={{ top: `calc(64px + ${projectIndex * 40}px` }}
             >
-              <div
-                className="absolute inset-0 -z-10  opacity-10"
-                style={{ backgroundImage: `url(${GrainImage.src})` }}
-              ></div>
-
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
                   <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
@@ -109,7 +135,7 @@ export const Projects = () => {
                   />
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
