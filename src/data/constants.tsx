@@ -112,3 +112,40 @@ export const ExperienceList = [
     iconBg: "#232631",
   },
 ];
+
+export const CertificationList = [
+  {
+    title: "The Complete JavaScript Course 2022: From Zero To Expert!",
+    instructor: "Jonas Schmedtman",
+    platform: "Udemy",
+    imageUrl:
+      "https://udemy-certificate.s3.amazonaws.com/image/UC-04fe2cd0-19ae-4eca-83e0-c2f57c17b930.jpg",
+  },
+  {
+    title: "Front End Web UI Frameworks and Tools",
+    institution: "The Hong Kong University of Science and Technology",
+    platform: "Coursera",
+    imageUrl:
+      "https://www.coursera.org/account/accomplishments/verify/23LCY8477QKS?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
+  },
+  {
+    title: "Java Programming - Complete Beginner to Advanced",
+    institution: "CodeIn Academy",
+    platform: "Udemy",
+    imageUrl:
+      "https://udemy-certificate.s3.amazonaws.com/pdf/UC-b6fd28ce-899d-4b15-8ebb-94eac96de87e.pdf",
+  },
+  {
+    title: "Android Application Development",
+    institution: "EdYoda Digital University",
+    platform: "Udemy",
+    imageUrl:
+      "https://www.udemy.com/certificate/UC-04fe2cd0-19ae-4eca-83e0-c2f57c17b930/",
+  },
+  {
+    title: "Basics of Machine Learning",
+    institution: "Great Learning Academy",
+    platform: "Great Learning",
+    imageUrl: "https://www.mygreatlearning.com/certificate/CLGULTLC",
+  },
+];

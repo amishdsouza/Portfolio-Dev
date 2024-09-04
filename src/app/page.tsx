@@ -5,9 +5,9 @@ import { About } from "@/sections/About";
 import { Projects } from "@/sections/Projects";
 import { Footer } from "@/sections/Footer";
 import { Experience } from "@/sections/Experience";
+import { Certification } from "@/sections/Certification";
 
 import Logo from "@/sections/Logo";
-import { Certification } from "@/sections/Certification";
 
 export default function Home() {
   return (
