@@ -7,6 +7,7 @@ import { Footer } from "@/sections/Footer";
 import { Experience } from "@/sections/Experience";
 
 import Logo from "@/sections/Logo";
+import { Certification } from "@/sections/Certification";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <About />
       <Experience />
       <Projects />
+      <Certification />
       {/* <Logo /> */}
       {/* <LogoTicker /> */}
       <Footer />
