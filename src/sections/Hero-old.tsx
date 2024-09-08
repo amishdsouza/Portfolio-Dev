@@ -1,5 +1,4 @@
 import ArrowIcon from "@/assets/arrow-right.svg";
-import noodleImage from "@/assets/noodle.png";
 import HeroImage from "@/assets/cog2.jpeg";
 import Image from "next/image";
 

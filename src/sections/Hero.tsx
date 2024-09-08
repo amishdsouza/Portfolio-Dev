@@ -11,6 +11,9 @@ export const Hero = () => {
             <h1 className="text-5xl md:text-7xl mt-6 font-bold tracking-tighter">
               Amish Dickson Dsouza
             </h1>
+            <h2 className="text-5xl md:text-3xl mt-6 tracking-tighter">
+              Full-stack Developer
+            </h2>
             {/* <p className="text-2xl tracking-tighter mt-6">Test</p> */}
             <div className="flex gap-1 items-center mt-[30px]">
               <button className="btn btn-primary flex items-center gap-2">

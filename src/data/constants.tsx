@@ -35,17 +35,20 @@ export const iconItemsPart1 = [
   { title: "NextJS", iconType: NextJS, alt: "NextJS Logo" },
   { title: "Tailwind", iconType: Tailwind, alt: "Tailwind Logo" },
   { title: "Bootstrap", iconType: BOOTSTRAP, alt: "Bootstrap Logo" },
-  { title: "Angular", iconType: ANGULAR, alt: "Angular Logo" },
-  { title: "Figma", iconType: FIGMA, alt: "Figma Logo" },
-  { title: "GitHub", iconType: GitHub, alt: "GitHub Logo" },
 ];
 
 export const iconItemsPart2 = [
+  { title: "Angular", iconType: ANGULAR, alt: "Angular Logo" },
+  { title: "Figma", iconType: FIGMA, alt: "Figma Logo" },
+  { title: "GitHub", iconType: GitHub, alt: "GitHub Logo" },
   { title: "GitLab", iconType: GitLab, alt: "GitLab Logo" },
   { title: "MongoDB", iconType: MongoDB, alt: "MongoDB Logo" },
   { title: "MySQL", iconType: MySQL, alt: "MySQL Logo" },
   { title: "NodeJS", iconType: NodeJS, alt: "NodeJS Logo" },
   { title: "Java", iconType: Java, alt: "Java Logo" },
+];
+
+export const iconItemsPart3 = [
   { title: "Python", iconType: Python, alt: "Python Logo" },
   { title: "PHP", iconType: PHP, alt: "PHP Logo" },
   { title: "Cloudflare", iconType: CLOUDFLARE, alt: "Cloudflare Logo" },
@@ -115,6 +118,7 @@ export const ExperienceList = [
 
 export const CertificationList = [
   {
+    technology: "JavaScript",
     title: "The Complete JavaScript Course 2022: From Zero To Expert!",
     instructor: "Jonas Schmedtman",
     platform: "Udemy",
@@ -122,13 +126,15 @@ export const CertificationList = [
       "https://udemy-certificate.s3.amazonaws.com/image/UC-04fe2cd0-19ae-4eca-83e0-c2f57c17b930.jpg",
   },
   {
+    technology: "Bootstrap",
     title: "Front End Web UI Frameworks and Tools",
     institution: "The Hong Kong University of Science and Technology",
     platform: "Coursera",
     imageUrl:
-      "https://www.coursera.org/account/accomplishments/verify/23LCY8477QKS?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
+      "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~23LCY8477QKS/CERTIFICATE_LANDING_PAGE~23LCY8477QKS.jpeg",
   },
   {
+    technology: "Java",
     title: "Java Programming - Complete Beginner to Advanced",
     institution: "CodeIn Academy",
     platform: "Udemy",
@@ -136,16 +142,19 @@ export const CertificationList = [
       "https://udemy-certificate.s3.amazonaws.com/pdf/UC-b6fd28ce-899d-4b15-8ebb-94eac96de87e.pdf",
   },
   {
+    technology: "Android",
     title: "Android Application Development",
     institution: "EdYoda Digital University",
     platform: "Udemy",
     imageUrl:
-      "https://www.udemy.com/certificate/UC-04fe2cd0-19ae-4eca-83e0-c2f57c17b930/",
+      "https://udemy-certificate.s3.amazonaws.com/image/UC-04fe2cd0-19ae-4eca-83e0-c2f57c17b930.jpg",
   },
   {
+    technology: "Machine Learning",
     title: "Basics of Machine Learning",
     institution: "Great Learning Academy",
     platform: "Great Learning",
-    imageUrl: "https://www.mygreatlearning.com/certificate/CLGULTLC",
+    imageUrl:
+      "https://d9jmtjs5r4cgq.cloudfront.net/ComplementaryCourseCertificate/472352/original/Amish_Dickson_Dsouza20211007-9816-fmyxu4.jpg",
   },
 ];
