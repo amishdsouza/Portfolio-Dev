@@ -1,6 +1,5 @@
 import Company1Logo from "@/assets/star.png";
 
-// constants.ts
 import ANGULAR from "@/assets/Icons/angular.svg";
 import BOOTSTRAP from "@/assets/Icons/bootstrap.svg";
 import CLOUDFLARE from "@/assets/Icons/cloudflare.svg";
@@ -26,7 +25,6 @@ import Wordpress from "@/assets/Icons/wordpress.svg";
 import MICROSOFT from "@/assets/Icons/microsoft.svg";
 import DotNet from "@/assets/Icons/dotnet.svg";
 
-// Define and export icon items
 export const iconItemsPart1 = [
   { title: "HTML", iconType: HTML, alt: "HTML Logo" },
   { title: "CSS", iconType: CSS, alt: "CSS Logo" },
@@ -60,7 +58,6 @@ export const iconItemsPart3 = [
   { title: "Microsoft Dynamics", iconType: MICROSOFT, alt: "Microsoft Logo" },
 ];
 
-// Define and export hobbies
 export const hobbies = [
   { title: "Gaming", emoji: "🎮", left: "5%", top: "5%" },
   { title: "DJ", emoji: "🎧", left: "50%", top: "5%" },
@@ -69,10 +66,10 @@ export const hobbies = [
   { title: "Photography", emoji: "📸", left: "15%", top: "65%" },
 ];
 
-export const ExperienceList = [
+export const EducationData = [
   {
     title: "MSc - Master of Science in Computing",
-    company_name: "Edge Hill University, Ormskirk, United Kingdom",
+    institution: "Edge Hill University, Ormskirk, United Kingdom",
     date: "2022 - 2023",
     points: ["Nailed the Master's in Computing with a Distinction."],
     icon: Company1Logo,
@@ -80,7 +77,7 @@ export const ExperienceList = [
   },
   {
     title: "MCA - Master of Computer Applications",
-    company_name: "St. Aloysius College, Mangalore, India",
+    institution: "St. Aloysius College, Mangalore, India",
     date: "2019 - 2022", // Replace "Fix date" with actual dates
     points: ["Awarded 'The Best Student of the MCA.'"],
     icon: Company1Logo,
@@ -88,7 +85,7 @@ export const ExperienceList = [
   },
   {
     title: "BCA - Bachelor of Computer Applications",
-    company_name: "St. Aloysius College, Mangalore, India",
+    institution: "St. Aloysius College, Mangalore, India",
     date: "2016 - 2019",
     points: [
       "Embarked on my tech adventure during BCA, learning to talk the code talk.",
@@ -98,7 +95,7 @@ export const ExperienceList = [
   },
   {
     title: "PCMC - Physics, Chemistry, Mathematics, Science",
-    company_name: "Padua College of Commerce and Management, Mangalore, India",
+    institution: "Padua College of Commerce and Management, Mangalore, India",
     date: "2014 - 2016",
     points: [
       "Embraced software and web development, veering away from science experiments.",
@@ -108,11 +105,76 @@ export const ExperienceList = [
   },
   {
     title: "10th Grade",
-    company_name: "Vidya Jyothi High School, Mangalore, India",
+    institution: "Vidya Jyothi High School, Mangalore, India",
     date: "2014",
     points: ["Had a blast while cruising through the basic schooling."],
     icon: Company1Logo,
     iconBg: "#232631",
+  },
+];
+
+export const workExperiences = [
+  {
+    id: 1,
+    company: "Edge Hill University, Ormskirk, United Kingdom",
+    pos: "Software Engineer",
+    duration: "Feb 2023 - Present",
+    title:
+      "Leading the design, development, and ongoing maintenance of a diverse portfolio of projects, demonstrating expertise in JavaScript, Python, .NET, and seamless API integration. This endeavor has consistently yielded optimized performance and elevated user experiences. Employing a wide array of technologies and tools, I custom-tailor solutions to precisely meet project requirements, ensuring a harmonious blend of innovation and functionality.",
+    technologiesUsed: [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      ".NET Core",
+      "Python",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "SQL",
+    ],
+    tools: ["PsychoPy", "Visual Studio", "Postman", "VS Code"],
+    responsibility:
+      "Spearheading the development of projects including JBART, Board Games, and Portfolio Website",
+  },
+  {
+    id: 2,
+    company: "Novigo Solutions, Mangalore, India",
+    pos: "Software Engineer",
+    duration: "2020 - 2022",
+    title:
+      "Streamlining and automating cargo weighing calculations, enhancing quality control, and improving efficiency by eliminating calculation errors by replacing manual techniques with a comprehensive system that provides easier client and ship management, field-level locking for real-time data updating during surveys, and an audit log for complete job history. It involved developing a mobile application for the Surveyors, and a website application for Master Mariner.",
+    technologiesUsed: [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      ".NET Core",
+      "Entity Framework Core",
+      "Angular Framework",
+      "LINQ SQL",
+    ],
+    tools: ["Visual Studio", "Postman", "SQL Database Management"],
+    responsibility:
+      "Developed proficiency in Entity Framework Core and demonstrated expertise in utilizing web APIs, contributing to the successful completion of multiple .NET projects. Developed and tested web APIs using Postman, successfully implementing JWT tokens for authorization purposes in web API calls. Implementing CRUD functionality for the application, and AppContext for user settings.",
+  },
+  {
+    id: 3,
+    company: "Glowtouch Technologies, Mangalore, India",
+    pos: "Junior Administrator",
+    duration: "Apr 2019 - Nov 2020",
+    title:
+      "The role involved delivering round-the-clock assistance to users navigating web hosting services. The position required proficiency in various support channels, including live chat, phone, and email from customers all around the world.",
+    technologiesUsed: [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      ".NET Core",
+      "Entity Framework Core",
+      "Angular Framework",
+      "LINQ SQL",
+    ],
+    tools: ["Visual Studio", "Postman", "SQL Database Management"],
+    responsibility:
+      "Encompassed addressing technical challenges related to website setup developed with different platforms, and server configurations, with a focus on providing clear and step-by-step guidance.",
   },
 ];
 

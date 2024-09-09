@@ -4,6 +4,7 @@ import { LogoTicker } from "@/sections/LogoTicker";
 import { About } from "@/sections/About";
 import { Projects } from "@/sections/Projects";
 import { Footer } from "@/sections/Footer";
+import { Education } from "@/sections/Education";
 import { Experience } from "@/sections/Experience";
 import { Certification } from "@/sections/Certification";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <About />
       <Experience />
+      <Education />
       <Projects />
       <Certification />
       {/* <Logo /> */}
