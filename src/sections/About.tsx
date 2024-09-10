@@ -112,7 +112,6 @@ const HobbiesCard = () => (
           aria-label={`Hobby: ${hobby.title}`}
         >
           <span className="font-medium text-gray-700">{hobby.title}</span>
-
           <span>{hobby.emoji}</span>
         </div>
       ))}

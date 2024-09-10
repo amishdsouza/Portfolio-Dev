@@ -119,7 +119,7 @@ export const workExperiences = [
     company: "Edge Hill University, Ormskirk, United Kingdom",
     pos: "Software Engineer",
     duration: "Feb 2023 - Present",
-    title:
+    description:
       "Leading the design, development, and ongoing maintenance of a diverse portfolio of projects, demonstrating expertise in JavaScript, Python, .NET, and seamless API integration. This endeavor has consistently yielded optimized performance and elevated user experiences. Employing a wide array of technologies and tools, I custom-tailor solutions to precisely meet project requirements, ensuring a harmonious blend of innovation and functionality.",
     technologiesUsed: [
       "HTML",
