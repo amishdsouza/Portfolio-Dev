@@ -1,25 +1,16 @@
 "use client";
 
 import { useState } from "react";
-
 import { Card } from "@/components/Card";
-
 import { SectionHeader } from "@/components/SectionHeader";
-
 import { CardHeader } from "@/components/CardHeader";
-
 import { IconItems } from "@/components/IconItems";
 
 import Image from "next/image";
-
 import Tick from "@/assets/tick.svg";
-
 import Copy from "@/assets/copy.svg";
-
 import MapImage from "@/assets/map.jpg";
-
 import PassionImage from "@/assets/passion.png";
-
 import SmileMemoji from "@/assets/memoji-smile.png";
 
 import {
