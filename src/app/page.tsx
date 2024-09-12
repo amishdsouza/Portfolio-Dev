@@ -13,9 +13,9 @@ import Logo from "@/sections/Logo";
 export default function Home() {
   return (
     <>
-      <Header />
-      <Hero />
-      <About />
+      {/* <Header /> */}
+      {/* <Hero /> */}
+      {/* <About /> */}
       <Experience />
       <Education />
       <Projects />

@@ -3,54 +3,39 @@ import { workExperiences } from "@/data/constants";
 
 export const Experience = () => {
   return (
-    <div className="py-10 lg:py-10">
-      <div className="text-white px-10">
-        <SectionHeader
-          eyebrow="Experience"
-          title="Work Experience"
-          description=""
-        />
+    <div className="py-20 px-10 lg:py-28 lg:px-40">
+      <SectionHeader eyebrow="Experience" title="" description="" />
+      <div className="space-y-8">
+        {workExperiences.map((experience) => (
+          <div
+            key={experience.id}
+            className="relative bg-gradient-to-r from-indigo-500 to-purple-700 rounded-xl flex transition-transform transform hover:scale-105 duration-300 ease-in-out"
+          >
+            {/* Left section: Position, Company */}
+            <div className="flex-shrink-0 w-1/3 bg-black bg-opacity-50 p-6 rounded-l-xl flex flex-col justify-center">
+              <div className="text-lg font-semibold text-white opacity-80">
+                {experience.duration}
+              </div>
+              <div className="text-2xl font-bold text-white mt-2">
+                {experience.pos}
+              </div>
+              <div className="text-sm text-gray-300 mt-1 opacity-70">
+                {experience.company}
+              </div>
+            </div>
 
-        <div className="w-full text-white">
-          <div className="grid lg:grid-cols-1 grid-cols-1 gap-5 mt-12">
-            <div className="col-span-2 rounded-lg bg-[#007bff] border border-t-black">
-              <div className="sm:py-10 py-5 sm:px-5 px-2.5">
-                {workExperiences.map((item, index) => (
-                  <div
-                    key={index}
-                    className="grid grid-cols-[auto_1fr] items-start gap-5 transition-all ease-in-out duration-500 cursor-pointer hover:bg-[#5e6872] rounded-lg sm:px-5 px-2.5 group"
-                  >
-                    <div className="flex flex-col h-full justify-start items-center py-2">
-                      <div className="rounded-3xl w-16 h-16 p-2 bg-white">
-                        <img className="w-full h-full" src={item.icon} alt="" />
-                      </div>
-
-                      {/* Work Content Bar */}
-                      <div className="flex-1 w-0.5 mt-4 h-full bg-slate-600 group-hover:bg-blue-800 group-last:hidden"></div>
-                    </div>
-
-                    <div className="sm:p-5 px-2.5 py-5">
-                      <p className="font-bold text-white text-xl">
-                        {item.company}
-                      </p>
-                      {/* Text color is now white */}
-                      <p className="text-md mb-5 text-gray-200">
-                        {/* Light gray for extra contrast */}
-                        {item.pos} -- <span>{item.duration}</span>
-                      </p>
-                      <p className="group-hover:text-gray-100 transition-all ease-in-out duration-500">
-                        {item.description}
-                        {item.technologiesUsed}
-                        {item.tools}
-                        {item.responsibility}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+            {/* Right section: Description, Responsibility */}
+            <div className="flex-grow bg-white text-black p-6 relative overflow-hidden rounded-r-xl">
+              <p className="text-black">{experience.description}</p>
+              <p className="mt-4 text-black">{experience.responsibility}</p>
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-b from-white to-black"></div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-t from-white to-black"></div>
+                <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-l from-white to-black"></div>
               </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

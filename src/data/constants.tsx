@@ -133,8 +133,6 @@ export const workExperiences = [
       "SQL",
     ],
     tools: ["PsychoPy", "Visual Studio", "Postman", "VS Code"],
-    responsibility:
-      "Spearheading the development of projects including JBART, Board Games, and Portfolio Website",
   },
   {
     id: 2,
