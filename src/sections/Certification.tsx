@@ -1,76 +1,126 @@
 "use client";
-import { useState } from "react";
+
+import { useState, useEffect, useRef } from "react";
+
 import { CertificationList } from "@/data/constants";
 
 // Define the type for certification items
+
 type CertificationItem = {
   title: string;
+
   technology: string;
+
   institution?: string;
+
   instructor?: string;
+
   platform: string;
+
   imageUrl: string;
 };
 
 export const Certification = () => {
-  // Use the title to identify selectedItem, but display technology in the sidebar
-  const [selectedItem, setSelectedItem] = useState(CertificationList[0].title);
+  const [selectedItem, setSelectedItem] = useState(0);
 
-  // Retrieve content data by selected title
-  const content = CertificationList.find(
-    (item) => item.title === selectedItem
-  )!;
+  // Updated sectionsRef type to handle 'HTMLDivElement | null'
+
+  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]); // Refs for each section
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionsRef.current) {
+        // Loop through sections and determine which is fully visible
+
+        sectionsRef.current.forEach((section, index) => {
+          if (section) {
+            const rect = section.getBoundingClientRect();
+
+            const windowHeight = window.innerHeight;
+
+            // Check if the section is fully within the viewport
+
+            if (rect.top >= 0 && rect.bottom <= windowHeight) {
+              setSelectedItem(index);
+            }
+          }
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="flex min-h-screen bg-white">
-      {/* Sidebar */}
-      <aside className="w-64 bg-white p-6 shadow-xl rounded-lg">
-        <nav className="space-y-3">
-          {CertificationList.map(({ title, technology }) => (
-            <button
-              key={title}
-              onClick={() => setSelectedItem(title)}
-              className={`w-full text-left flex items-center space-x-3 p-4 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-                selectedItem === title
-                  ? "bg-indigo-600 text-white border-l-4 border-indigo-500 shadow-lg"
-                  : "hover:bg-gray-200 bg-white text-gray-800"
-              }`}
-            >
-              <span className="font-semibold text-lg">{technology}</span>
-            </button>
-          ))}
-        </nav>
-      </aside>
+    <div className="flex flex-col min-h-screen">
+      {CertificationList.map((content, index) => (
+        <div
+          key={content.title}
+          className="flex min-h-screen transition-colors duration-1000"
+          ref={(el) => {
+            sectionsRef.current[index] = el;
+          }}
+          style={{
+            background: index % 2 === 0 ? "#E0F7FA" : "#FFE0B2", // Alternate background colors
+          }}
+        >
+          <main className="flex-grow flex flex-col items-center justify-center p-8">
+            {/* Content in a row (text on the left, image on the right) */}
 
-      {/* Main Content */}
-      <main className="flex-grow p-8 flex flex-col items-center justify-center">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-800">
-          {content.title}
-        </h2>
-        <div className="w-full max-w-3xl">
-          <img
-            src={content.imageUrl}
-            alt={content.title}
-            className="w-full h-auto object-cover rounded-lg shadow-md transition-transform duration-300 transform hover:scale-105"
-          />
+            <div className="flex flex-row items-center w-full max-w-6xl mx-auto space-x-16">
+              {/* Text section */}
+
+              <div className="w-1/2">
+                <h2 className="text-6xl font-bold mb-6 text-gray-900 leading-tight">
+                  {content.title}
+                </h2>
+
+                <p className="text-2xl text-gray-700 font-semibold mb-4">
+                  {content.technology}
+                </p>
+
+                <div className="text-lg space-y-3">
+                  {content.institution && (
+                    <p className="text-gray-700 font-medium">
+                      <span className="text-gray-500">Institution: </span>
+
+                      {content.institution}
+                    </p>
+                  )}
+
+                  {content.instructor && (
+                    <p className="text-gray-700 font-medium">
+                      <span className="text-gray-500">Instructor: </span>
+
+                      {content.instructor}
+                    </p>
+                  )}
+
+                  <p className="text-gray-700 font-medium">
+                    <span className="text-gray-500">Platform: </span>
+
+                    {content.platform}
+                  </p>
+                </div>
+              </div>
+
+              {/* Image section */}
+
+              <div className="w-1/2">
+                <img
+                  src={content.imageUrl}
+                  alt={content.title}
+                  className="w-full h-auto object-cover rounded-lg shadow-md transition-transform duration-300 transform hover:scale-105"
+                />
+              </div>
+            </div>
+          </main>
         </div>
-        {/* Display the instructor, institution, and platform */}
-        <div className="mt-4 text-center">
-          {content.institution && (
-            <p className="text-lg font-medium text-gray-700">
-              Institution: {content.institution}
-            </p>
-          )}
-          {content.instructor && (
-            <p className="text-lg font-medium text-gray-700">
-              Instructor: {content.instructor}
-            </p>
-          )}
-          <p className="text-lg font-medium text-gray-700">
-            Platform: {content.platform}
-          </p>
-        </div>
-      </main>
+      ))}
     </div>
   );
 };
