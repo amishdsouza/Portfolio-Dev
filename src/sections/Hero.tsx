@@ -1,40 +1,49 @@
 import HeroImage from "@/assets/cogs.jpeg";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export const Hero = () => {
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setIsAnimated(true), 100);
+  }, []);
+
   return (
-    <section className="pt-8 pb-20 md:pt-5 md:pb-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[100vh] relative">
-        {/* Left Blue Section */}
-        <div className="bg-[#007bff] min-h-[90vh] text-white flex items-center justify-center px-10">
-          <div>
-            <h1 className="text-5xl md:text-7xl mt-6 font-bold tracking-tighter">
+    <section className="pb-20 md:pb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen relative">
+        {/* Left Blue Section with Fade-in Animation */}
+        <div
+          className={`bg-[#007bff] text-white flex flex-col items-center justify-center px-10 transition-transform duration-1000 ${
+            isAnimated ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <div
+            className={`text-center md:text-left transition-opacity delay-500 duration-1000 ${
+              isAnimated ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">
               Amish Dickson Dsouza
             </h1>
-            <h2 className="text-5xl md:text-3xl mt-6 tracking-tighter">
+            <h2 className="text-3xl md:text-5xl mt-4 md:mt-6 tracking-tighter">
               Full-stack Developer
             </h2>
-            {/* <p className="text-2xl tracking-tighter mt-6">Test</p> */}
-            <div className="flex gap-1 items-center mt-[30px]">
-              <button className="btn btn-primary flex items-center gap-2">
-                Explore My Work
-              </button>
-            </div>
           </div>
         </div>
 
-        {/* Right White Section with Image */}
-        <div className="bg-white flex items-center justify-center relative">
+        {/* Right White Section with Image Slide-in Animation */}
+        <div
+          className={`bg-white flex items-center justify-center relative overflow-hidden transition-transform duration-1000 ${
+            isAnimated ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
           <Image
             src={HeroImage}
             alt="HeroImage"
-            className="w-full h-auto max-h-[80vh] object-cover relative z-10 shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
-            style={{
-              position: "absolute",
-              left: "-10%",
-              top: "50%",
-              transform: "translateY(-50%)",
-            }}
+            className="object-cover w-full h-auto max-h-[80vh] max-w-full"
+            style={{ position: "relative", zIndex: 10 }}
+            priority
           />
         </div>
       </div>

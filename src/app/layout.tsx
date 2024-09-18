@@ -24,11 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="relative">
+    <html lang="en">
       <body className={clsx(dmSans.className, "antialiased bg-[#ffffff]")}>
         {children}
       </body>
     </html>
   );
 }
-// DM_Sans,Inter,Calistoga,Montserrat,Poppins,Oswald,Open_Sans,

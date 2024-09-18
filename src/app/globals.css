@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer components {
+  /* Button Styles */
   .btn {
     @apply px-4;
     @apply py-2;
@@ -24,6 +25,7 @@
     @apply bg-transparent;
   }
 
+  /* Tag Styles */
   .tag {
     @apply text-sm;
     @apply inline-flex;
@@ -37,6 +39,28 @@
 }
 
 @layer base {
+  /* Navigation Link Styles */
+  .nav-link {
+    @apply relative;
+    @apply inline-block;
+    @apply px-1;
+    @apply text-gray-800;
+    @apply hover:text-blue-600;
+    @apply transition-colors;
+    @apply after:absolute;
+    @apply after:left-0;
+    @apply after:bottom-0;
+    @apply after:w-full;
+    @apply after:h-[2px];
+    @apply after:bg-blue-600;
+    @apply after:transition-all;
+    @apply after:transform;
+    @apply after:scale-x-0;
+    @apply hover:after:scale-x-100;
+    @apply after:content-[''];
+  }
+
+  /* Navigation Item Styles */
   .nav-item {
     @apply px-4;
     @apply py-1.5;
@@ -52,7 +76,22 @@
 }
 
 @layer utilities {
+  /* Container Utility */
   .container {
-    @apply lg:max-w-5xl;
+    @apply lg:max-w-6xl;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out;
   }
 }

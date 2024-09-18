@@ -8,15 +8,10 @@ import { CertificationList } from "@/data/constants";
 
 type CertificationItem = {
   title: string;
-
   technology: string;
-
   institution?: string;
-
   instructor?: string;
-
   platform: string;
-
   imageUrl: string;
 };
 
