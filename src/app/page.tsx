@@ -38,14 +38,24 @@ export default function Home() {
   return (
     <>
       <Header show={showName} fadeIn={headerFadeIn} />
-      <Hero />
+      <div id="hero">
+        <Hero />
+      </div>
       <div id="about">
         <About />
       </div>
-      <Experience />
-      <Projects />
-      <Certification />
-      <Education />
+      <div id="experience">
+        <Experience />
+      </div>
+      <div id="projects">
+        <Projects />
+      </div>
+      <div id="certification">
+        <Certification />
+      </div>
+      <div id="education">
+        <Education />
+      </div>
       <Footer />
     </>
   );

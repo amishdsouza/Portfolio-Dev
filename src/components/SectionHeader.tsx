@@ -14,10 +14,10 @@ export const SectionHeader = ({
           {eyebrow}
         </p>
       </div>
-      <h2 className="font-serif text-3xl md:text-6xl text-center mt-6 text-black">
+      <h2 className="font-serif text-3xl md:text-3xl text-center mt-6 text-black">
         {title}
       </h2>
-      <p className="md:text-lg text-black/60 text-justify mt-4 max-w-7xl mx-auto lg:text-xl">
+      <p className="md:text-lg text-black/60 text-center mt-4 max-w-7xl mx-auto lg:text-xl">
         {description}
       </p>
     </>

@@ -1,5 +1,3 @@
-import Company1Logo from "@/assets/star.png";
-
 import ANGULAR from "@/assets/Icons/angular.svg";
 import BOOTSTRAP from "@/assets/Icons/bootstrap.svg";
 import CLOUDFLARE from "@/assets/Icons/cloudflare.svg";
@@ -25,7 +23,8 @@ import Wordpress from "@/assets/Icons/wordpress.svg";
 import MICROSOFT from "@/assets/Icons/microsoft.svg";
 import DotNet from "@/assets/Icons/dotnet.svg";
 
-export const iconItemsPart1 = [
+// Frontend Technologies
+export const frontendIcons = [
   { title: "HTML", iconType: HTML, alt: "HTML Logo" },
   { title: "CSS", iconType: CSS, alt: "CSS Logo" },
   { title: "JavaScript", iconType: JS, alt: "JavaScript Logo" },
@@ -33,29 +32,31 @@ export const iconItemsPart1 = [
   { title: "NextJS", iconType: NextJS, alt: "NextJS Logo" },
   { title: "Tailwind", iconType: Tailwind, alt: "Tailwind Logo" },
   { title: "Bootstrap", iconType: BOOTSTRAP, alt: "Bootstrap Logo" },
-];
-
-export const iconItemsPart2 = [
   { title: "Angular", iconType: ANGULAR, alt: "Angular Logo" },
   { title: "Figma", iconType: FIGMA, alt: "Figma Logo" },
-  { title: "GitHub", iconType: GitHub, alt: "GitHub Logo" },
-  { title: "GitLab", iconType: GitLab, alt: "GitLab Logo" },
+];
+
+// Backend Technologies
+export const backendIcons = [
+  { title: "Java", iconType: Java, alt: "Java Logo" },
+  { title: "Python", iconType: Python, alt: "Python Logo" },
+  { title: "PHP", iconType: PHP, alt: "PHP Logo" },
   { title: "MongoDB", iconType: MongoDB, alt: "MongoDB Logo" },
   { title: "MySQL", iconType: MySQL, alt: "MySQL Logo" },
   { title: "NodeJS", iconType: NodeJS, alt: "NodeJS Logo" },
-  { title: "Java", iconType: Java, alt: "Java Logo" },
+  { title: "Cloudflare", iconType: CLOUDFLARE, alt: "Cloudflare Logo" },
+  { title: ".Net Core", iconType: DotNet, alt: ".Net Core Logo" },
+  { title: "Microsoft Dynamics", iconType: MICROSOFT, alt: "Microsoft Logo" },
 ];
 
-export const iconItemsPart3 = [
-  { title: "Python", iconType: Python, alt: "Python Logo" },
-  { title: "PHP", iconType: PHP, alt: "PHP Logo" },
-  { title: "Cloudflare", iconType: CLOUDFLARE, alt: "Cloudflare Logo" },
+// Version Control & Tools
+export const toolsIcons = [
+  { title: "GitHub", iconType: GitHub, alt: "GitHub Logo" },
+  { title: "GitLab", iconType: GitLab, alt: "GitLab Logo" },
   { title: "NPM", iconType: NPM, alt: "NPM Logo" },
   { title: "Postman", iconType: Postman, alt: "Postman Logo" },
   { title: "Webpack", iconType: Webpack, alt: "Webpack Logo" },
   { title: "WordPress", iconType: Wordpress, alt: "WordPress Logo" },
-  { title: ".Net Core", iconType: DotNet, alt: "DotNet Logo" },
-  { title: "Microsoft Dynamics", iconType: MICROSOFT, alt: "Microsoft Logo" },
 ];
 
 export const hobbies = [
@@ -63,7 +64,7 @@ export const hobbies = [
   { title: "DJ", emoji: "🎧", left: "50%", top: "5%" },
   { title: "Hiking", emoji: "🌄", left: "10%", top: "35%" },
   { title: "Driving", emoji: "🚗", left: "50%", top: "35%" },
-  { title: "Photography", emoji: "📸", left: "15%", top: "65%" },
+  { title: "Photography", emoji: "📸", left: "25%", top: "20%" },
 ];
 
 export const EducationData = [
@@ -72,16 +73,12 @@ export const EducationData = [
     institution: "Edge Hill University, Ormskirk, United Kingdom",
     date: "2022 - 2023",
     points: ["Nailed the Master's in Computing with a Distinction."],
-    icon: Company1Logo,
-    iconBg: "#232631",
   },
   {
     title: "MCA - Master of Computer Applications",
     institution: "St. Aloysius College, Mangalore, India",
     date: "2019 - 2022", // Replace "Fix date" with actual dates
     points: ["Awarded 'The Best Student of the MCA.'"],
-    icon: Company1Logo,
-    iconBg: "#232631",
   },
   {
     title: "BCA - Bachelor of Computer Applications",
@@ -90,8 +87,6 @@ export const EducationData = [
     points: [
       "Embarked on my tech adventure during BCA, learning to talk the code talk.",
     ],
-    icon: Company1Logo,
-    iconBg: "#232631",
   },
   {
     title: "PCMC - Physics, Chemistry, Mathematics, Science",
@@ -100,16 +95,12 @@ export const EducationData = [
     points: [
       "Embraced software and web development, veering away from science experiments.",
     ],
-    icon: Company1Logo,
-    iconBg: "#232631",
   },
   {
     title: "10th Grade",
     institution: "Vidya Jyothi High School, Mangalore, India",
     date: "2014",
     points: ["Had a blast while cruising through the basic schooling."],
-    icon: Company1Logo,
-    iconBg: "#232631",
   },
 ];
 
@@ -117,62 +108,34 @@ export const workExperiences = [
   {
     id: 1,
     company: "Edge Hill University, Ormskirk, United Kingdom",
-    pos: "Software Engineer",
-    duration: "Feb 2023 - Present",
+    pos: "Software Developer",
+    duration: "Apr 2024 - Present",
     description:
-      "Leading the design, development, and ongoing maintenance of a diverse portfolio of projects, demonstrating expertise in JavaScript, Python, .NET, and seamless API integration. This endeavor has consistently yielded optimized performance and elevated user experiences. Employing a wide array of technologies and tools, I custom-tailor solutions to precisely meet project requirements, ensuring a harmonious blend of innovation and functionality.",
-    technologiesUsed: [
-      "HTML",
-      "CSS",
-      "Bootstrap",
-      ".NET Core",
-      "Python",
-      "JavaScript",
-      "React",
-      "Node.js",
-      "SQL",
-    ],
-    tools: ["PsychoPy", "Visual Studio", "Postman", "VS Code"],
+      "Revamped a student record system using MS Dynamics, AWS buckets, and cutting-edge technologies to build a modern solution. Designed a user-friendly interface with React.js, integrated data management with FetchXML and GraphQL, and created robust data pipelines for seamless data flow. Utilized AWS buckets for secure data storage and real-time synchronization, ensuring accurate and accessible student records.",
   },
   {
     id: 2,
-    company: "Novigo Solutions, Mangalore, India",
+    company: "Edge Hill University, Ormskirk, United Kingdom",
     pos: "Software Engineer",
-    duration: "2020 - 2022",
-    title:
-      "Streamlining and automating cargo weighing calculations, enhancing quality control, and improving efficiency by eliminating calculation errors by replacing manual techniques with a comprehensive system that provides easier client and ship management, field-level locking for real-time data updating during surveys, and an audit log for complete job history. It involved developing a mobile application for the Surveyors, and a website application for Master Mariner.",
-    technologiesUsed: [
-      "HTML",
-      "CSS",
-      "Bootstrap",
-      ".NET Core",
-      "Entity Framework Core",
-      "Angular Framework",
-      "LINQ SQL",
-    ],
-    tools: ["Visual Studio", "Postman", "SQL Database Management"],
-    responsibility:
-      "Developed proficiency in Entity Framework Core and demonstrated expertise in utilizing web APIs, contributing to the successful completion of multiple .NET projects. Developed and tested web APIs using Postman, successfully implementing JWT tokens for authorization purposes in web API calls. Implementing CRUD functionality for the application, and AppContext for user settings.",
+    duration: "Feb 2023 - Jan 2024",
+    description:
+      "Lead the design, development, and implementation of diverse set of projects, demonstrating expertise in JavaScript, React, Next.js, Python and API integration. Employing a wide array of technologies and tools, I custom-tailor solutions to precisely meet project requirements, ensuring a harmonious blend of innovation and functionality.",
   },
   {
     id: 3,
+    company: "Novigo Solutions, Mangalore, India",
+    pos: "Software Engineer",
+    duration: "Feb 2022 - Jul 2022",
+    description:
+      "Developed game-changing software for a global leader in cargo transport, turning cargo weighing into a smooth, error-free process. Enhanced quality control and efficiency with automation and cutting-edge tech. Data flowed seamlessly with .NET Core 3.1 and Entity Framework Core, SignalR provided live updates, and IdentityServer kept security tight—all while thriving in an Agile environment with daily Scrums and weekly project powwows.",
+  },
+  {
+    id: 4,
     company: "Glowtouch Technologies, Mangalore, India",
-    pos: "Junior Administrator",
+    pos: "Web Hosting Associate",
     duration: "Apr 2019 - Nov 2020",
-    title:
-      "The role involved delivering round-the-clock assistance to users navigating web hosting services. The position required proficiency in various support channels, including live chat, phone, and email from customers all around the world.",
-    technologiesUsed: [
-      "HTML",
-      "CSS",
-      "Bootstrap",
-      ".NET Core",
-      "Entity Framework Core",
-      "Angular Framework",
-      "LINQ SQL",
-    ],
-    tools: ["Visual Studio", "Postman", "SQL Database Management"],
-    responsibility:
-      "Encompassed addressing technical challenges related to website setup developed with different platforms, and server configurations, with a focus on providing clear and step-by-step guidance.",
+    description:
+      "Built a range of stunning websites using PHP, JavaScript, WordPress, WooCommerce, or Weebly, ensuring they shined online and soared in search rankings with smart SEO strategies. Once the design magic was complete, handled domain registration and set up websites and emails on either Linux or Windows servers.",
   },
 ];
 

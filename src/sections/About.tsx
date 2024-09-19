@@ -1,70 +1,82 @@
 "use client";
 
-import { useState } from "react";
-import { Card } from "@/components/Card";
-import { SectionHeader } from "@/components/SectionHeader";
-import { CardHeader } from "@/components/CardHeader";
-import { IconItems } from "@/components/IconItems";
-
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Tick from "@/assets/tick.svg";
 import Copy from "@/assets/copy.svg";
 import MapImage from "@/assets/map.jpg";
 import PassionImage from "@/assets/passion.png";
 import SmileMemoji from "@/assets/memoji-smile.png";
-
+import { Card } from "@/components/Card";
+import { SectionHeader } from "@/components/SectionHeader";
+import { CardHeader } from "@/components/CardHeader";
+import { IconItems } from "@/components/IconItems";
+import { motion } from "framer-motion";
 import {
-  iconItemsPart1,
-  iconItemsPart2,
-  iconItemsPart3,
+  frontendIcons,
+  backendIcons,
+  toolsIcons,
   hobbies,
 } from "@/data/constants";
+const filterOptions = [
+  { label: "Frontend", icons: frontendIcons },
+  { label: "Backend", icons: backendIcons },
+  { label: "Dev Tools", icons: toolsIcons },
+];
 
-const TechStackCard = () => (
-  <Card className="h-[276px] md:h-[450px] lg:h-[440px]">
-    <CardHeader
-      title="Tech Stack"
-      description="I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable applications"
-    />
+const TechStackCard = () => {
+  const [selectedFilter, setSelectedFilter] = useState(filterOptions[0].label);
 
-    <div className="overflow-hidden">
-      <IconItems
-        items={iconItemsPart1}
-        itemsWrapperClassName="animate-move-left [animation-duration:30s]"
+  const currentIcons =
+    filterOptions.find((option) => option.label === selectedFilter)?.icons ||
+    [];
+
+  return (
+    <Card className="h-[276px] md:h-[450px] lg:h-[440px]">
+      <CardHeader
+        title="Tech Stack"
+        description="I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable applications."
       />
 
-      <IconItems
-        items={iconItemsPart2}
-        className="mt-4"
-        itemsWrapperClassName="animate-move-right [animation-duration:30s]"
-      />
+      <div className="flex flex-col items-center">
+        <div className="flex gap-4 mb-4">
+          {filterOptions.map((option) => (
+            <button
+              key={option.label}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                selectedFilter === option.label
+                  ? "bg-blue-500 text-white"
+                  : "bg-gray-200 text-gray-700"
+              }`}
+              onClick={() => setSelectedFilter(option.label)}
+            >
+              {option.label}
+            </button>
+          ))}
+        </div>
 
-      <IconItems
-        items={iconItemsPart3}
-        className="mt-4"
-        itemsWrapperClassName="animate-move-left [animation-duration:30s]"
-      />
-    </div>
-  </Card>
-);
+        <div className="overflow-hidden">
+          <IconItems items={currentIcons} itemsWrapperClassName="" />
+        </div>
+      </div>
+    </Card>
+  );
+};
 
 const MapCard = () => (
-  <Card className="h-[276px] md:h-[450px] lg:h-[650px]">
+  <Card className="relative h-[276px] md:h-[450px] lg:h-[650px]">
     <CardHeader
-      title="I’m flexible with time zone communications & locations"
-      description="I'm based in Liverpool, United Kingdom and open to remote work worldwide"
+      title="Flexible with time zone communications & locations"
+      description="Based in Liverpool, UK. Open to remote work worldwide."
     />
-
     <Image
       src={MapImage}
       alt="Map showing locations"
       className="h-full w-full object-cover"
       loading="lazy"
     />
-
-    <div className="absolute top-[60%] left-[22%] -translate-x-1/2 -translate-y-1/2 size-20 rounded-full after:content-[''] after:absolute after:inset-0 after-rounded-full after:outline-gray-950/30">
+    <div className="absolute top-[60%] left-[22%] transform -translate-x-1/2 -translate-y-1/2 size-20 rounded-full outline-gray-950/30">
       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
-
       <Image
         src={SmileMemoji}
         alt="Memoji smile"
@@ -77,6 +89,7 @@ const MapCard = () => (
 
 const ContactCard = () => {
   const [hasCopied, setHasCopied] = useState(false);
+
   const handleCopy = () => {
     navigator.clipboard.writeText("amishdsouza1998@gmail.com");
     setHasCopied(true);
@@ -87,11 +100,11 @@ const ContactCard = () => {
     <Card className="h-auto p-6 md:py-8 md:px-10 flex flex-col items-center justify-center shadow-md">
       <p className="font-serif text-3xl text-center">Contact me</p>
       <div
-        className="copy-container mt-4 flex items-center gap-2"
+        className="copy-container mt-4 flex items-center gap-2 cursor-pointer"
         onClick={handleCopy}
       >
         {hasCopied ? <Tick /> : <Copy />}
-        <p className="text-sm lg:text-xl max-w-7xl text-white mt-2">
+        <p className="text-sm lg:text-xl text-white mt-2">
           amishdsouza1998@gmail.com
         </p>
       </div>
@@ -99,33 +112,44 @@ const ContactCard = () => {
   );
 };
 
-const HobbiesCard = () => (
-  <Card className="h-[370px] w-auto flex-1 flex-col shadow-md relative z-20">
-    <CardHeader title="My Hobbies" description="Explore" />
+const HobbiesCard = () => {
+  const constraintRef = useRef(null);
 
-    <div className="relative flex-1">
-      {hobbies.map((hobby) => (
-        <div
-          key={hobby.title}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-gray-200 rounded-full shadow-sm absolute"
-          style={{ left: hobby.left, top: hobby.top }}
-          aria-label={`Hobby: ${hobby.title}`}
-        >
-          <span className="font-medium text-gray-700">{hobby.title}</span>
-          <span>{hobby.emoji}</span>
-        </div>
-      ))}
-    </div>
-  </Card>
-);
+  return (
+    <Card className="relative h-[370px] flex-1 flex-col shadow-md">
+      <CardHeader
+        title="My Hobbies"
+        description="Explore"
+        className="px-6 py-6"
+      />
+      <div className="relative flex-1 h-full w-full" ref={constraintRef}>
+        {hobbies.map((hobby) => (
+          <motion.div
+            key={hobby.title}
+            className="inline-flex items-center gap-2 px-6 py-1.5 bg-gray-100 text-gray-800 rounded-full absolute shadow-sm transition-transform transform hover:scale-110"
+            style={{
+              left: hobby.left,
+              top: hobby.top,
+            }}
+            aria-label={`Hobby: ${hobby.title}`}
+            drag
+            dragConstraints={constraintRef}
+          >
+            <span className="font-medium">{hobby.title}</span>
+            <span>{hobby.emoji}</span>
+          </motion.div>
+        ))}
+      </div>
+    </Card>
+  );
+};
 
 const PassionCard = () => (
-  <Card className="h-[370px] w-auto flex-1 flex-col shadow-md relative z-10">
+  <Card className="relative h-[370px] flex-1 flex-col shadow-md">
     <CardHeader
       title="My Passion for Coding"
       description="I love solving problems and building things through code. Programming isn't just my profession—it's my passion. I enjoy exploring new technologies and enhancing my skills."
     />
-
     <div className="flex-1 flex items-center justify-center">
       <Image src={PassionImage} alt="Passion Logo" />
     </div>
@@ -138,16 +162,8 @@ export const About = () => {
       <div className="text-white px-20">
         <SectionHeader
           eyebrow="About"
-          title="A Glimpse"
-          description="Greetings! I am Amish Dickson Dsouza, an ardent designer and developer specializing in the creation of stylish, contemporary website and software. With a deep love for aesthetics and an eye for detail, I thrive on translating ideas into visually stunning and user-friendly designs.
-
-          My journey began with the fascination of coding a block that generated prime numbers. Initially, it seemed like a daunting task, but as I delved deeper, my passion for programming grew. I embarked on a journey of learning various programming languages, including C, C++, Java, Python, and more. Over the years, I have dedicated myself to honing my skills in different areas, striving to become a proficient full-stack developer.
-
-          Now, as a software engineer with over 3 years of experience, I have had the opportunity to work on projects for multiple clients. This has been an enriching experience, as it has allowed me to collaborate with various companies and gain a diverse range of professional exposure.
-
-          I am grateful for the privilege to work on these projects and contribute to the success of my clients. The challenges and opportunities I have encountered along the way have further fueled my passion for designing and developing innovative solutions.
-
-          Thank you for taking the time to visit my portfolio. I invite you to explore my work. Feel free to reach out to discuss your project or simply say hello. I look forward to collaborating with you!"
+          title=""
+          description="Hi, I’m Amish Dickson Dsouza, a designer and developer passionate about creating sleek, modern websites and software. My journey began with coding and evolved into a career as a full-stack developer with over 3 years of experience. I’ve worked on various projects, honing my skills and collaborating with diverse clients. Explore my portfolio and reach out if you’d like to connect or discuss a project!"
         />
 
         <div className="mt-10 flex flex-col gap-5">

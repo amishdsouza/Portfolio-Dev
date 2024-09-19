@@ -1,9 +1,17 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import MenuIcon from "@/assets/menu.svg";
 
-export const Header = ({ show = true, fadeIn = false }) => {
+export const Header = ({
+  show = true,
+  fadeIn = false,
+}: {
+  show?: boolean;
+  fadeIn?: boolean;
+}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>(""); // Track the active section
+
   const handleToggleDropdown = () => setIsDropdownOpen((prev) => !prev);
 
   const menuItems = useMemo(
@@ -17,6 +25,32 @@ export const Header = ({ show = true, fadeIn = false }) => {
     ],
     []
   );
+
+  // Track scroll position and update active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = menuItems
+        .map((item) => {
+          const element = document.querySelector(item.href);
+          if (!element) return null;
+          return { id: item.label, top: element.getBoundingClientRect().top };
+        })
+        .filter(
+          (section): section is { id: string; top: number } => section !== null
+        ); // Filter out null sections
+
+      const currentSection = sections
+        .filter((section) => section.top <= window.innerHeight / 2)
+        .pop();
+
+      if (currentSection && currentSection.id !== activeSection) {
+        setActiveSection(currentSection.id);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [activeSection, menuItems]);
 
   return (
     <header
@@ -37,7 +71,13 @@ export const Header = ({ show = true, fadeIn = false }) => {
           {/* Desktop Menu */}
           <nav className="hidden md:flex gap-12 font-light items-center lg:text-xl">
             {menuItems.map((item) => (
-              <a key={item.label} href={item.href} className="nav-link">
+              <a
+                key={item.label}
+                href={item.href}
+                className={`nav-link ${
+                  activeSection === item.label ? "text-blue-600" : ""
+                }`} // Highlight the active link
+              >
                 {item.label}
               </a>
             ))}
@@ -62,7 +102,9 @@ export const Header = ({ show = true, fadeIn = false }) => {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="nav-link text-2xl"
+                    className={`nav-link text-2xl ${
+                      activeSection === item.label ? "text-blue-600" : ""
+                    }`} // Highlight the active link
                     onClick={handleToggleDropdown}
                   >
                     {item.label}
