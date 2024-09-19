@@ -14,7 +14,7 @@ export const Hero = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen relative">
         {/* Left Blue Section with Fade-in Animation */}
         <div
-          className={`bg-[#007bff] text-white flex flex-col items-center justify-center px-10 transition-transform duration-1000 ${
+          className={`bg-[#24a2e6] text-white flex flex-col items-center justify-center px-10 transition-transform duration-1000 ${
             isAnimated ? "translate-x-0" : "-translate-x-full"
           }`}
         >

@@ -18,6 +18,7 @@ import {
   toolsIcons,
   hobbies,
 } from "@/data/constants";
+
 const filterOptions = [
   { label: "Frontend", icons: frontendIcons },
   { label: "Backend", icons: backendIcons },
@@ -32,7 +33,7 @@ const TechStackCard = () => {
     [];
 
   return (
-    <Card className="h-[276px] md:h-[450px] lg:h-[440px]">
+    <Card className="h-[276px] md:h-[450px] lg:h-[440px] bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400">
       <CardHeader
         title="Tech Stack"
         description="I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable applications."
@@ -64,7 +65,7 @@ const TechStackCard = () => {
 };
 
 const MapCard = () => (
-  <Card className="relative h-[276px] md:h-[450px] lg:h-[650px]">
+  <Card className="relative h-[276px] md:h-[450px] lg:h-[650px] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500">
     <CardHeader
       title="Flexible with time zone communications & locations"
       description="Based in Liverpool, UK. Open to remote work worldwide."
@@ -97,7 +98,7 @@ const ContactCard = () => {
   };
 
   return (
-    <Card className="h-auto p-6 md:py-8 md:px-10 flex flex-col items-center justify-center shadow-md">
+    <Card className="h-auto p-6 md:py-8 md:px-10 flex flex-col items-center justify-center shadow-md bg-gradient-to-br from-indigo-600 via-indigo-500 to-indigo-400">
       <p className="font-serif text-3xl text-center">Contact me</p>
       <div
         className="copy-container mt-4 flex items-center gap-2 cursor-pointer"
@@ -112,14 +113,14 @@ const ContactCard = () => {
   );
 };
 
-const HobbiesCard = () => {
+const AboutMeCard = () => {
   const constraintRef = useRef(null);
 
   return (
-    <Card className="relative h-[370px] flex-1 flex-col shadow-md">
+    <Card className="relative h-[370px] flex-1 flex-col shadow-md bg-gradient-to-br from-teal-500 via-blue-500 to-sky-200">
       <CardHeader
-        title="My Hobbies"
-        description="Explore"
+        title="About Me"
+        description="I'm Amish Dickson Dsouza, a full-stack developer with 3+ years of experience. Passionate about building modern, sleek websites and software, I love collaborating with clients to bring their ideas to life."
         className="px-6 py-6"
       />
       <div className="relative flex-1 h-full w-full" ref={constraintRef}>
@@ -145,7 +146,7 @@ const HobbiesCard = () => {
 };
 
 const PassionCard = () => (
-  <Card className="relative h-[370px] flex-1 flex-col shadow-md">
+  <Card className="relative h-[370px] flex-1 flex-col shadow-md bg-gradient-to-br from-sky-600 via-sky-500 to-sky-400">
     <CardHeader
       title="My Passion for Coding"
       description="I love solving problems and building things through code. Programming isn't just my profession—it's my passion. I enjoy exploring new technologies and enhancing my skills."
@@ -160,17 +161,18 @@ export const About = () => {
   return (
     <div className="py-20 lg:py-28">
       <div className="text-white px-20">
-        <SectionHeader
-          eyebrow="About"
-          title=""
-          description="Hi, I’m Amish Dickson Dsouza, a designer and developer passionate about creating sleek, modern websites and software. My journey began with coding and evolved into a career as a full-stack developer with over 3 years of experience. I’ve worked on various projects, honing my skills and collaborating with diverse clients. Explore my portfolio and reach out if you’d like to connect or discuss a project!"
-        />
+        <SectionHeader eyebrow="" title="" description="" />
 
         <div className="mt-10 flex flex-col gap-5">
           <div className="grid grid-cols-3 gap-5 md:grid-rows-3 lg:grid-rows-[auto_auto_auto]">
-            {/* TechStackCard takes up 2 columns in the first row */}
-            <div className="col-span-2 row-span-1">
-              <TechStackCard />
+            {/* HobbiesCard is beside MapCard */}
+            <div className="col-span-1 row-span-1 ">
+              <AboutMeCard />
+            </div>
+
+            {/* PassionCard beside HobbiesCard */}
+            <div className="col-span-1 row-span-1">
+              <PassionCard />
             </div>
 
             {/* MapCard takes up 1 column and 2 rows */}
@@ -181,14 +183,9 @@ export const About = () => {
               </div>
             </div>
 
-            {/* HobbiesCard is beside MapCard */}
-            <div className="col-span-1 row-span-1 ">
-              <HobbiesCard />
-            </div>
-
-            {/* PassionCard beside HobbiesCard */}
-            <div className="col-span-1 row-span-1">
-              <PassionCard />
+            {/* TechStackCard takes up 2 columns in the first row */}
+            <div className="col-span-2 row-span-1">
+              <TechStackCard />
             </div>
           </div>
         </div>

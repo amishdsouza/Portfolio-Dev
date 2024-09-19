@@ -12,19 +12,31 @@ const backgroundColors = [
 ];
 
 export const Projects = () => {
-  const [selectedItem, setSelectedItem] = useState(0);
+  const [backgroundColor, setBackgroundColor] = useState(backgroundColors[0]);
+  const [activeIndex, setActiveIndex] = useState(0);
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (sectionsRef.current) {
+      if (sectionsRef.current.length) {
+        const windowHeight = window.innerHeight;
+
         sectionsRef.current.forEach((section, index) => {
           if (section) {
             const rect = section.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
+            const sectionMidPoint = rect.top + rect.height / 2;
 
-            if (rect.top >= 0 && rect.bottom <= windowHeight) {
-              setSelectedItem(index);
+            // If the section's midpoint crosses the screen's midpoint, update the background color
+            if (
+              sectionMidPoint >= windowHeight / 2 &&
+              sectionMidPoint <= windowHeight
+            ) {
+              if (activeIndex !== index) {
+                setActiveIndex(index);
+                setBackgroundColor(
+                  backgroundColors[index % backgroundColors.length]
+                );
+              }
             }
           }
         });
@@ -36,19 +48,19 @@ export const Projects = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [activeIndex]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div
+      className="flex flex-col min-h-screen transition-colors duration-500"
+      style={{ background: backgroundColor }}
+    >
       {portfolioProjects.map((project, index) => (
         <div
           key={project.title}
-          className="flex min-h-screen transition-colors duration-1000"
+          className="flex min-h-screen"
           ref={(el) => {
             sectionsRef.current[index] = el;
-          }}
-          style={{
-            background: backgroundColors[index % backgroundColors.length],
           }}
         >
           <main className="flex-grow flex flex-col items-center justify-center p-8">
@@ -88,7 +100,7 @@ export const Projects = () => {
                 <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-auto object-cover rounded-lg shadow-md transition-transform duration-300 transform hover:scale-105"
+                  className="w-full h-[70vh] object-cover rounded-lg shadow-md transition-transform duration-300 transform hover:scale-125"
                 />
               </div>
             </div>
