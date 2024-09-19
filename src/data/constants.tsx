@@ -1,3 +1,4 @@
+//AboutImages
 import ANGULAR from "@/assets/Icons/angular.svg";
 import BOOTSTRAP from "@/assets/Icons/bootstrap.svg";
 import CLOUDFLARE from "@/assets/Icons/cloudflare.svg";
@@ -22,6 +23,14 @@ import Webpack from "@/assets/Icons/webpack.svg";
 import Wordpress from "@/assets/Icons/wordpress.svg";
 import MICROSOFT from "@/assets/Icons/microsoft.svg";
 import DotNet from "@/assets/Icons/dotnet.svg";
+
+//ProjectImages
+import GuessNumber from "@/assets/Projects/GuessNumber.png";
+import DiceGame from "@/assets/Projects/DiceGame.png";
+import MapMiles from "@/assets/Projects/MapMiles.png";
+import EHU from "@/assets/Projects/EHU_CX.jpg";
+import JBart from "@/assets/Projects/Slide16.jpeg";
+import Intertek from "@/assets/Projects/intertek.jpg";
 
 // Frontend Technologies
 export const frontendIcons = [
@@ -77,7 +86,7 @@ export const EducationData = [
   {
     title: "MCA - Master of Computer Applications",
     institution: "St. Aloysius College, Mangalore, India",
-    date: "2019 - 2022", // Replace "Fix date" with actual dates
+    date: "2019 - 2022",
     points: ["Awarded 'The Best Student of the MCA.'"],
   },
   {
@@ -179,5 +188,107 @@ export const CertificationList = [
     platform: "Great Learning",
     imageUrl:
       "https://d9jmtjs5r4cgq.cloudfront.net/ComplementaryCourseCertificate/472352/original/Amish_Dickson_Dsouza20211007-9816-fmyxu4.jpg",
+  },
+];
+
+export const portfolioProjects = [
+  {
+    company: "Edge Hill University",
+    year: "2024 - Present",
+    title: "Student Admission Portal",
+    results: [
+      {
+        title:
+          "🚀 Enhanced system versatility and user experience for students and staff",
+      },
+      {
+        title:
+          "🔐 Optimized user permissions and secured access for over 150 staff members",
+      },
+      {
+        title:
+          "⚙️ Automated business processes, boosting operational efficiency by 25%",
+      },
+    ],
+    link: "https://edgehillacuktest.elluciancrmrecruit.com/Apply/",
+    image: EHU,
+  },
+  {
+    company: "Edge Hill University",
+    year: "Feb 2023 - Jun 2023",
+    title: "Jbart",
+    results: [
+      {
+        title:
+          "🧠 Innovatively assessed risk-taking behavior with advanced scenario design",
+      },
+      {
+        title:
+          "🚀 Reduced development time by 30% through optimized software processes",
+      },
+      {
+        title:
+          "⏱ Achieved millisecond-level precision in tracking participant connections",
+      },
+    ],
+    link: "https://gitlab.pavlovia.org/amishdsouza/jbart-m-d",
+    image: JBart,
+  },
+  {
+    company: "Novigo Solutions",
+    year: "Feb 2022 - Jul 2022",
+    title: "Intertek Project",
+    results: [
+      {
+        title:
+          "🔄 Streamlined cargo weighing processes, reducing calculation errors by 40%",
+      },
+      {
+        title:
+          "🔐 Enhanced application security with JWT tokens, improving API authorization",
+      },
+      {
+        title:
+          "📊 Improved data management and user experience with optimized CRUD functionality",
+      },
+    ],
+    link: "https://www.intertek.com/about/",
+    image: Intertek,
+  },
+  {
+    company: "Personal Projects",
+    year: "2022",
+    title: "Guess the Number Game",
+    results: [
+      { title: "🎮 Elevated user engagement by 30%" },
+      { title: "⚙️ Enhanced algorithm performance by 20%" },
+      { title: "📉 Reduced bounce rate by 15%" },
+    ],
+    link: "https://example.com/guess-number-game",
+    image: GuessNumber,
+  },
+  {
+    company: "Personal Projects",
+    year: "2021",
+    title: "Dice Rolling Game",
+    results: [
+      { title: "🏆 Boosted user retention by 25%" },
+      { title: "🎲 Increased gameplay sessions by 40%" },
+      { title: "🔗 Expanded feature set with multiplayer mode" },
+    ],
+    link: "https://example.com/dice-rolling-game",
+    image: DiceGame,
+  },
+  {
+    company: "Personal Projects",
+    year: "2023",
+    title: "Map Miles Tracker",
+    results: [
+      { title: "🗺️ Enhanced mapping accuracy by 45%" },
+      { title: "📍 Integrated new geolocation features" },
+      { title: "✨ Improved user interface and experience" },
+    ],
+    link: "https://example.com/map-miles-tracker",
+    image: MapMiles,
   },
 ];

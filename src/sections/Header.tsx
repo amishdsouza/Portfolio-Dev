@@ -19,9 +19,9 @@ export const Header = ({
       { label: "Home", href: "#hero" },
       { label: "About", href: "#about" },
       { label: "Experience", href: "#experience" },
-      { label: "Education", href: "#education" },
-      { label: "Certification", href: "#certification" },
       { label: "Projects", href: "#projects" },
+      { label: "Certification", href: "#certification" },
+      { label: "Education", href: "#education" },
     ],
     []
   );
