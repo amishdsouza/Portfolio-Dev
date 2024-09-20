@@ -25,6 +25,74 @@ const filterOptions = [
   { label: "Dev Tools", icons: toolsIcons },
 ];
 
+const AboutMeCard = () => {
+  const constraintRef = useRef(null);
+
+  return (
+    <Card className="relative h-[370px] flex-1 flex-col shadow-md bg-gradient-to-br from-teal-500 via-blue-400 to-sky-300">
+      <CardHeader
+        title="About Me"
+        description="Hi, I’m Amish Dickson Dsouza, a designer and developer who loves creating modern, beautiful websites and software. Outside of coding, I enjoy exploring a range of hobbies that fuel my creativity!"
+        className="px-6 py-6"
+      />
+      <div className="relative flex-1 h-full w-full" ref={constraintRef}>
+        {hobbies.map((hobby) => (
+          <motion.div
+            key={hobby.title}
+            className="inline-flex items-center gap-2 px-6 py-1.5 bg-gray-100 text-gray-800 rounded-full absolute shadow-sm transition-transform transform hover:scale-110"
+            style={{
+              left: hobby.left,
+              top: hobby.top,
+            }}
+            aria-label={`Hobby: ${hobby.title}`}
+            drag
+            dragConstraints={constraintRef}
+          >
+            <span className="font-medium">{hobby.title}</span>
+            <span>{hobby.emoji}</span>
+          </motion.div>
+        ))}
+      </div>
+    </Card>
+  );
+};
+
+const PassionCard = () => (
+  <Card className="relative h-[370px] flex-1 flex-col shadow-md bg-gradient-to-tl from-blue-600 via-sky-500 to-blue-400">
+    <CardHeader
+      title="My Passion for Coding"
+      description="I love solving problems and building things through code. Programming isn't just my profession—it's my passion. I enjoy exploring new technologies and enhancing my skills."
+    />
+    <div className="flex-1 flex items-center justify-center">
+      <Image src={PassionImage} alt="Passion Logo" />
+    </div>
+  </Card>
+);
+
+const MapCard = () => (
+  <Card className="relative h-[276px] md:h-[450px] lg:h-[650px] bg-gradient-to-tr from-sky-500 via-blue-600 to-sky-300">
+    <CardHeader
+      title="Flexible with time zone communications & locations"
+      description="Based in Liverpool, UK. Open to remote work worldwide."
+    />
+    <Image
+      src={MapImage}
+      alt="Map showing locations"
+      className="h-full w-full object-cover"
+      loading="lazy"
+    />
+    <div className="absolute top-[60%] left-[22%] transform -translate-x-1/2 -translate-y-1/2 size-20 rounded-full outline-gray-950/30">
+      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
+      <Image
+        src={SmileMemoji}
+        alt="Memoji smile"
+        className="size-20"
+        loading="lazy"
+      />
+    </div>
+  </Card>
+);
+
 const TechStackCard = () => {
   const [selectedFilter, setSelectedFilter] = useState(filterOptions[0].label);
 
@@ -33,7 +101,7 @@ const TechStackCard = () => {
     [];
 
   return (
-    <Card className="h-[276px] md:h-[450px] lg:h-[440px] bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400">
+    <Card className="h-[276px] md:h-[450px] lg:h-[440px] bg-gradient-to-tr from-sky-700 via-blue-500 to-blue-300">
       <CardHeader
         title="Tech Stack"
         description="I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable applications."
@@ -64,30 +132,6 @@ const TechStackCard = () => {
   );
 };
 
-const MapCard = () => (
-  <Card className="relative h-[276px] md:h-[450px] lg:h-[650px] bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500">
-    <CardHeader
-      title="Flexible with time zone communications & locations"
-      description="Based in Liverpool, UK. Open to remote work worldwide."
-    />
-    <Image
-      src={MapImage}
-      alt="Map showing locations"
-      className="h-full w-full object-cover"
-      loading="lazy"
-    />
-    <div className="absolute top-[60%] left-[22%] transform -translate-x-1/2 -translate-y-1/2 size-20 rounded-full outline-gray-950/30">
-      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
-      <Image
-        src={SmileMemoji}
-        alt="Memoji smile"
-        className="size-20"
-        loading="lazy"
-      />
-    </div>
-  </Card>
-);
-
 const ContactCard = () => {
   const [hasCopied, setHasCopied] = useState(false);
 
@@ -98,7 +142,7 @@ const ContactCard = () => {
   };
 
   return (
-    <Card className="h-auto p-6 md:py-8 md:px-10 flex flex-col items-center justify-center shadow-md bg-gradient-to-br from-indigo-600 via-indigo-500 to-indigo-400">
+    <Card className="h-auto p-6 md:py-8 md:px-10 flex flex-col items-center justify-center shadow-md bg-gradient-to-t from-blue-500 via-sky-500 to-sky-300 ">
       <p className="font-serif text-3xl text-center">Contact me</p>
       <div
         className="copy-container mt-4 flex items-center gap-2 cursor-pointer"
@@ -112,50 +156,6 @@ const ContactCard = () => {
     </Card>
   );
 };
-
-const AboutMeCard = () => {
-  const constraintRef = useRef(null);
-
-  return (
-    <Card className="relative h-[370px] flex-1 flex-col shadow-md bg-gradient-to-br from-teal-500 via-blue-500 to-sky-200">
-      <CardHeader
-        title="About Me"
-        description="I'm Amish Dickson Dsouza, a full-stack developer with 3+ years of experience. Passionate about building modern, sleek websites and software, I love collaborating with clients to bring their ideas to life."
-        className="px-6 py-6"
-      />
-      <div className="relative flex-1 h-full w-full" ref={constraintRef}>
-        {hobbies.map((hobby) => (
-          <motion.div
-            key={hobby.title}
-            className="inline-flex items-center gap-2 px-6 py-1.5 bg-gray-100 text-gray-800 rounded-full absolute shadow-sm transition-transform transform hover:scale-110"
-            style={{
-              left: hobby.left,
-              top: hobby.top,
-            }}
-            aria-label={`Hobby: ${hobby.title}`}
-            drag
-            dragConstraints={constraintRef}
-          >
-            <span className="font-medium">{hobby.title}</span>
-            <span>{hobby.emoji}</span>
-          </motion.div>
-        ))}
-      </div>
-    </Card>
-  );
-};
-
-const PassionCard = () => (
-  <Card className="relative h-[370px] flex-1 flex-col shadow-md bg-gradient-to-br from-sky-600 via-sky-500 to-sky-400">
-    <CardHeader
-      title="My Passion for Coding"
-      description="I love solving problems and building things through code. Programming isn't just my profession—it's my passion. I enjoy exploring new technologies and enhancing my skills."
-    />
-    <div className="flex-1 flex items-center justify-center">
-      <Image src={PassionImage} alt="Passion Logo" />
-    </div>
-  </Card>
-);
 
 export const About = () => {
   return (

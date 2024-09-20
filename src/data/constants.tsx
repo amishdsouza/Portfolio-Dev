@@ -44,7 +44,6 @@ export const frontendIcons = [
   { title: "Angular", iconType: ANGULAR, alt: "Angular Logo" },
   { title: "Figma", iconType: FIGMA, alt: "Figma Logo" },
 ];
-
 // Backend Technologies
 export const backendIcons = [
   { title: "Java", iconType: Java, alt: "Java Logo" },
@@ -55,7 +54,6 @@ export const backendIcons = [
   { title: "NodeJS", iconType: NodeJS, alt: "NodeJS Logo" },
   { title: "Cloudflare", iconType: CLOUDFLARE, alt: "Cloudflare Logo" },
   { title: ".Net Core", iconType: DotNet, alt: ".Net Core Logo" },
-  { title: "Microsoft Dynamics", iconType: MICROSOFT, alt: "Microsoft Logo" },
 ];
 
 // Version Control & Tools
@@ -69,11 +67,11 @@ export const toolsIcons = [
 ];
 
 export const hobbies = [
-  { title: "Gaming", emoji: "🎮", left: "5%", top: "5%" },
-  { title: "DJ", emoji: "🎧", left: "50%", top: "5%" },
-  { title: "Hiking", emoji: "🌄", left: "10%", top: "35%" },
-  { title: "Driving", emoji: "🚗", left: "50%", top: "35%" },
-  { title: "Photography", emoji: "📸", left: "25%", top: "20%" },
+  { title: "Gaming", emoji: "🎮", left: "8%", top: "5%" },
+  { title: "DJ", emoji: "🎧", left: "70%", top: "1%" },
+  { title: "Hiking", emoji: "🌄", left: "15%", top: "25%" },
+  { title: "Driving", emoji: "🚗", left: "65%", top: "30%" },
+  { title: "Photography", emoji: "📸", left: "40%", top: "15%" },
 ];
 
 export const EducationData = [

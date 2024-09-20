@@ -1,43 +1,35 @@
 import { twMerge } from "tailwind-merge";
 import { Icons } from "./Icons";
 import { Fragment } from "react";
+
 export const IconItems = ({
   items,
   className,
   itemsWrapperClassName,
 }: {
-  items: { title: string; iconType: React.ElementType }[];
+  items: {
+    title: string;
+    iconType: React.ElementType;
+  }[];
   className?: string;
   itemsWrapperClassName?: string;
 }) => {
   return (
-    <div
-      className={twMerge(
-        "flex[mask-image:linear-gradient(to_right,transparent, black_10%, black_90%, transparent)]",
-        className
-      )}
-    >
+    <div className={twMerge("flex justify-center items-center", className)}>
       <div
         className={twMerge(
-          "flex flex-none py-0.5 gap-6 pr-6",
+          "grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-8",
           itemsWrapperClassName
         )}
       >
-        {[
-          ...new Array(2).fill(0).map((_, index) => (
-            <Fragment key={index}>
-              {items.map((item) => (
-                <div
-                  key={item.title}
-                  className="inline-flex mt-5 items-center gap-4 py-2 px-3 outline outline-2 outline-white/10 rounded-lg text-white"
-                >
-                  <Icons component={item.iconType} />
-                  <span className="font-semibold"> {item.title} </span>
-                </div>
-              ))}
-            </Fragment>
-          )),
-        ]}
+        {items.map((item, index) => (
+          <Fragment key={index}>
+            <div className="flex flex-col items-center p-4">
+              <Icons component={item.iconType} />
+              <span className="font-semibold text-white"> {item.title} </span>
+            </div>
+          </Fragment>
+        ))}
       </div>
     </div>
   );
