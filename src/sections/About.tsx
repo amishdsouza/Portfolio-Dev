@@ -101,7 +101,7 @@ const TechStackCard = () => {
     [];
 
   return (
-    <Card className="h-[276px] md:h-[450px] lg:h-[440px] bg-gradient-to-tr from-sky-700 via-blue-500 to-blue-300">
+    <Card className="h-[274px] md:h-[450px] lg:h-[425px] bg-gradient-to-tr from-sky-700 via-blue-500 to-blue-300">
       <CardHeader
         title="Tech Stack"
         description="I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable applications."
@@ -142,7 +142,7 @@ const ContactCard = () => {
   };
 
   return (
-    <Card className="h-auto p-6 md:py-8 md:px-10 flex flex-col items-center justify-center shadow-md bg-gradient-to-t from-blue-500 via-sky-500 to-sky-300 ">
+    <Card className="h-[145px] p-6 md:py-8 md:px-10 flex flex-col items-center justify-center shadow-md bg-gradient-to-br from-blue-500 via-sky-500 to-sky-300 ">
       <p className="font-serif text-3xl text-center">Contact me</p>
       <div
         className="copy-container mt-4 flex items-center gap-2 cursor-pointer"
