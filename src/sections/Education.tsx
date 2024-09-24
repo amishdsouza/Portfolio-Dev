@@ -1,73 +1,67 @@
-import Image from "next/image";
 import { EducationData } from "@/data/constants";
+
+import { motion } from "framer-motion";
+
+import Image from "next/image"; // Ensure to import Image from the correct library
 
 export const Education = () => {
   return (
-    <section className="pt-20 pb-20 relative text-white">
-      <div className="mx-auto">
-        <div className="relative flex flex-col items-center">
-          {/* Vertical Line */}
-          <div className="w-2 bg-[#232631] absolute top-0 bottom-0"></div>
+    <section className="py-20 lg:py-28 text-gray-800 bg-white">
+      <div className="mx-auto px-4 flex justify-between items-start">
+        {/* Left Side with the Title */}
 
-          {/* Education Content */}
+        <div className="w-1/4 flex justify-start">
+          <h2 className="text-4xl font-bold">Education</h2>
+        </div>
+
+        {/* Right Side with the Cards */}
+
+        <div className="w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-end">
           {EducationData.map((education, index) => (
-            <div
+            <motion.div
               key={`education-${index}`}
-              className={`mb-20 w-full md:w-3/4 flex ${
-                index % 2 === 0 ? "justify-end" : "justify-start"
-              } items-center relative`}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+
+                ease: "easeInOut",
+
+                delay: index * 0.2,
+              }}
+              className="relative w-[400px] h-[450px] p-10 bg-gradient-to-br from-[#d1e7ff] to-[#a6c8ff] shadow-lg rounded-lg border border-[#cfe2ff] transition-transform transform hover:scale-105 flex flex-col justify-between"
             >
-              {/* Education Card */}
-              <div
-                className={`w-[500px] h-[200px] p-6 bg-[#1d1836] shadow-lg rounded-lg border border-[#232631] overflow-hidden flex flex-col justify-between ${
-                  index % 2 === 0 ? "mr-6" : "ml-6"
-                }`}
-              >
-                <div>
-                  <h3 className="text-xl font-bold text-white">
-                    {education.title}
-                  </h3>
-                  <p
-                    className="text-secondary text-sm font-semibold"
-                    style={{ margin: 0 }}
-                  >
-                    {education.institution} {/* Updated from company_name */}
-                  </p>
-                </div>
+              {/* Icon in the Top Left Corner */}
 
-                <ul className="list-disc ml-5 space-y-2">
-                  {education.points.map((point, pointIndex) => (
-                    <li
-                      key={`education-point-${index}-${pointIndex}`}
-                      className="text-white text-[14px] pl-1 tracking-wider"
-                    >
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Icon and Date */}
-              <div
-                className={`flex items-center absolute top-1/2 gap-5 transform -translate-y-1/2 ${
-                  index % 2 === 0
-                    ? "left-1/2 flex-row translate-x-[-85%]"
-                    : "right-1/2 flex-row-reverse translate-x-[85%]"
-                }`}
+              <motion.div
+                className="absolute top-4 left-4"
+                whileHover={{ scale: 1.2 }}
               >
-                <p className="text-black text-2xl mr-4">{education.date}</p>
-                <div
-                  className="flex justify-center items-center w-16 h-16 rounded-full"
-                  style={{ background: education.iconBg }}
-                >
-                  <Image
-                    src={education.icon}
-                    alt={education.institution}
-                    className="w-[80%] h-[80%] object-contain"
-                  />
+                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-gray-300">
+                  {/* <Image
+                    src={education.icon} // Ensure this is the correct path for the icon
+                    alt={`${education.title} icon`}
+                    className="w-10 h-10"
+                    width={40} // Adjust according to your needs
+                    height={40} // Adjust according to your needs
+                  /> */}
                 </div>
+              </motion.div>
+
+              {/* Text Content */}
+
+              <div className="flex flex-col justify-end h-full">
+                <h3 className="text-2xl font-bold mb-4">{education.title}</h3>
+
+                <p className="text-lg text-gray-600 italic mb-2">
+                  {education.institution}
+                </p>
+
+                <p className="text-sm text-gray-500 font-semibold">
+                  {education.date}
+                </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

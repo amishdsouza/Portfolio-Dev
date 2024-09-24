@@ -50,9 +50,9 @@ export default function Home() {
       <div id="projects">
         <Projects />
       </div>
-      <div id="certification">
+      {/* <div id="certification">
         <Certification />
-      </div>
+      </div> */}
       <div id="education">
         <Education />
       </div>

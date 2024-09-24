@@ -214,7 +214,7 @@ export const portfolioProjects = [
   {
     company: "Edge Hill University",
     year: "Feb 2023 - Jun 2023",
-    title: "Jbart",
+    title: "Joint Action bart",
     results: [
       {
         title:
@@ -235,7 +235,7 @@ export const portfolioProjects = [
   {
     company: "Novigo Solutions",
     year: "Feb 2022 - Jul 2022",
-    title: "Intertek Project",
+    title: "Intertek",
     results: [
       {
         title:

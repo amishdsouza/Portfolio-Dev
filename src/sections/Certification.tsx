@@ -12,22 +12,19 @@ export const Certification = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (sectionsRef.current) {
-        sectionsRef.current.forEach((section, index) => {
-          if (section) {
-            const rect = section.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
+      const windowHeight = window.innerHeight;
 
-            if (rect.top >= 0 && rect.bottom <= windowHeight) {
-              setSelectedItem(index);
-            }
+      sectionsRef.current.forEach((section, index) => {
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top >= 0 && rect.bottom <= windowHeight) {
+            setSelectedItem(index);
           }
-        });
-      }
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -40,8 +37,12 @@ export const Certification = () => {
           {CertificationList.map((content, index) => (
             <Card
               key={content.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
-              style={{ top: `calc(64px + ${index * 40}px)` }}
+              className={`px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky transition-all duration-300 ${
+                selectedItem === index ? "shadow-lg bg-white" : "bg-transparent"
+              }`}
+              style={{
+                top: `calc(64px + ${index * 40}px)`, // Adjust as necessary
+              }}
               ref={(el) => {
                 sectionsRef.current[index] = el;
               }}
@@ -92,13 +93,15 @@ export const Certification = () => {
                   )}
                 </div>
                 <div className="relative">
-                  {/* <Image
-                    src={content.imageUrl}
-                    alt={content.title}
-                    width={600} // Specify the width of the image
-                    height={400} // Specify the height of the image
-                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
-                  /> */}
+                  {content.imageUrl && (
+                    <Image
+                      src={content.imageUrl}
+                      alt={content.title}
+                      width={600}
+                      height={400}
+                      className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                    />
+                  )}
                 </div>
               </div>
             </Card>

@@ -26,7 +26,6 @@ export const Projects = () => {
             const rect = section.getBoundingClientRect();
             const sectionMidPoint = rect.top + rect.height / 2;
 
-            // If the section's midpoint crosses the screen's midpoint, update the background color
             if (
               sectionMidPoint >= windowHeight / 2 &&
               sectionMidPoint <= windowHeight
@@ -51,33 +50,41 @@ export const Projects = () => {
   }, [activeIndex]);
 
   return (
-    <div
-      className="flex flex-col min-h-screen transition-colors duration-500"
-      style={{ background: backgroundColor }}
-    >
+    <div className="flex flex-col transition-colors duration-500">
       {portfolioProjects.map((project, index) => (
         <div
           key={project.title}
-          className="flex min-h-screen"
+          className="flex"
           ref={(el) => {
             sectionsRef.current[index] = el;
           }}
         >
-          <main className="flex-grow flex flex-col items-center justify-center p-8">
-            <div className="flex flex-row items-center w-full max-w-6xl mx-auto space-x-16">
-              <div className="w-1/2">
-                <h2 className="text-6xl font-bold mb-6 text-gray-900 leading-tight">
+          <main className="flex-grow flex flex-col items-center justify-center p-12">
+            <div
+              className="flex flex-row items-center mx-auto space-x-20 bg-white rounded-lg p-10 shadow-2xl min-h-[740px] transition-opacity duration-700"
+              style={{
+                background: backgroundColors[index % backgroundColors.length],
+                opacity: activeIndex === index ? 1 : 0,
+              }}
+            >
+              <div className="w-1/2 rounded-lg p-8 transition-opacity duration-700">
+                <h2 className="text-6xl font-extrabold mb-8 text-gray-900 leading-tight tracking-tight">
                   {project.title}
                 </h2>
-
-                <p className="text-2xl text-gray-700 font-semibold mb-4">
-                  {project.company} • {project.year}
+                <p className="text-4xl text-gray-700 font-semibold mb-6">
+                  {project.company}
                 </p>
 
-                <div className="text-lg space-y-3">
+                <p className="text-2xl text-gray-700 font-semibold mb-6">
+                  {project.year}
+                </p>
+
+                <div className="text-lg space-y-4">
                   {project.results.map((result, idx) => (
-                    <p key={idx} className="text-gray-700 font-medium">
-                      <span className="text-gray-500">• </span>
+                    <p
+                      key={idx}
+                      className="text-gray-700 font-medium leading-relaxed"
+                    >
                       {result.title}
                     </p>
                   ))}
@@ -89,18 +96,28 @@ export const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto md:px-6">
+                    <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-10 md:w-auto md:px-8">
                       <span>Visit Live Site</span>
                     </button>
                   </a>
                 )}
               </div>
 
-              <div className="w-1/2">
+              {/* Scroll-based image animation */}
+              <div className="w-1/2 transition-all duration-700">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-[70vh] object-cover rounded-lg shadow-md transition-transform duration-300 transform hover:scale-125"
+                  className="w-full h-full object-cover rounded-lg shadow-md"
+                  style={{
+                    opacity: activeIndex === index ? 1 : 0,
+                    transform:
+                      activeIndex === index
+                        ? `translateY(0) scale(1)`
+                        : "scale(0.95)", // No translation for inactive sections
+                    transition:
+                      "transform 0.7s ease-out, opacity 0.7s ease-out",
+                  }}
                 />
               </div>
             </div>
