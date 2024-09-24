@@ -76,38 +76,43 @@ export const hobbies = [
 
 export const EducationData = [
   {
-    title: "MSc - Master of Science in Computing",
-    institution: "Edge Hill University, Ormskirk, United Kingdom",
+    title: "Master of Science in Computing (MSc)",
+    institution: "Edge Hill University",
+    location: "Ormskirk, United Kingdom",
     date: "2022 - 2023",
-    points: ["Nailed the Master's in Computing with a Distinction."],
+    description:
+      "🎓 Nailed the Master's in Computing with a Distinction. Basically, aced the techy stuff! 💻",
   },
   {
-    title: "MCA - Master of Computer Applications",
-    institution: "St. Aloysius College, Mangalore, India",
+    title: "Master of Computer Applications (MCA)",
+    institution: "St. Aloysius College (Autonomous)",
+    location: "Mangalore, India",
     date: "2019 - 2022",
-    points: ["Awarded 'The Best Student of the MCA.'"],
+    description: "🏅 Awarded the 'Best Student of the MCA' award. 🏆",
   },
   {
-    title: "BCA - Bachelor of Computer Applications",
-    institution: "St. Aloysius College, Mangalore, India",
+    title: "Bachelor of Computer Applications (BCA)",
+    institution: "St. Aloysius College (Autonomous)",
+    location: "Mangalore, India",
     date: "2016 - 2019",
-    points: [
-      "Embarked on my tech adventure during BCA, learning to talk the code talk.",
-    ],
+    description:
+      "🚀 Embarked on my adventure during BCA, learning to talk the code talk. 💻",
   },
   {
-    title: "PCMC - Physics, Chemistry, Mathematics, Science",
-    institution: "Padua College of Commerce and Management, Mangalore, India",
+    title: "A-Levels - Physics, Chemistry, Mathematics, and Computers",
+    institution: "Padua College of Commerce and Management",
+    location: "Mangalore, India",
     date: "2014 - 2016",
-    points: [
-      "Embraced software and web development, veering away from science experiments.",
-    ],
+    description:
+      "💡 Embraced the world of software and web development, veering away from the pull of gravity 🚀 and the clinks of test tubes 🧪.",
   },
   {
-    title: "10th Grade",
-    institution: "Vidya Jyothi High School, Mangalore, India",
+    title: "GCSE's",
+    institution: "Vidya Jyothi High School",
+    location: "Mangalore, India",
     date: "2014",
-    points: ["Had a blast while cruising through the basic schooling."],
+    description:
+      "🎒 Had a blast while cruising through the basic schooling. 🏫",
   },
 ];
 
