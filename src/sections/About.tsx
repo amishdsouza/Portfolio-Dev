@@ -161,7 +161,7 @@ export const About = () => {
   return (
     <div className="py-20 lg:py-28">
       <div className="text-white px-20">
-        <SectionHeader eyebrow="" title="" description="" />
+        <SectionHeader eyebrow="About" title="" description="" />
 
         <div className="mt-10 flex flex-col gap-5">
           <div className="grid grid-cols-3 gap-5 md:grid-rows-3 lg:grid-rows-[auto_auto_auto]">

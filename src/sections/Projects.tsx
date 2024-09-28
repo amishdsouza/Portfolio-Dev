@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { portfolioProjects } from "@/data/constants";
 import Image from "next/image";
+import { SectionHeader } from "@/components/SectionHeader";
 
 const backgroundColors = [
   "#EDE7F6", // Light Lavender
@@ -51,6 +52,7 @@ export const Projects = () => {
 
   return (
     <div className="flex flex-col transition-colors duration-500">
+      <SectionHeader eyebrow="Projects" title="" description="" />
       {portfolioProjects.map((project, index) => (
         <div
           key={project.title}
@@ -61,13 +63,15 @@ export const Projects = () => {
         >
           <main className="flex-grow flex flex-col items-center justify-center p-12">
             <div
-              className="flex flex-row items-center mx-auto space-x-20 bg-white rounded-lg p-10 shadow-2xl min-h-[740px] transition-opacity duration-700"
+              className="flex flex-row items-center mx-auto space-x-20 bg-white rounded-lg p-10 shadow-2xl min-h-[740px] transition-opacity duration-700 ease-in-out"
               style={{
                 background: backgroundColors[index % backgroundColors.length],
                 opacity: activeIndex === index ? 1 : 0,
+                transform:
+                  activeIndex === index ? "translateY(0)" : "translateY(20px)", // Slight translation for smoother entry
               }}
             >
-              <div className="w-1/2 rounded-lg p-8 transition-opacity duration-700">
+              <div className="w-1/2 rounded-lg p-8 transition-opacity duration-700 ease-in-out">
                 <h2 className="text-6xl font-extrabold mb-8 text-gray-900 leading-tight tracking-tight">
                   {project.title}
                 </h2>
@@ -104,7 +108,7 @@ export const Projects = () => {
               </div>
 
               {/* Scroll-based image animation */}
-              <div className="w-1/2 transition-all duration-700">
+              <div className="w-1/2 transition-all duration-700 ease-in-out">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -112,11 +116,9 @@ export const Projects = () => {
                   style={{
                     opacity: activeIndex === index ? 1 : 0,
                     transform:
-                      activeIndex === index
-                        ? `translateY(0) scale(1)`
-                        : "scale(0.95)", // No translation for inactive sections
+                      activeIndex === index ? "scale(1)" : "scale(0.95)",
                     transition:
-                      "transform 0.7s ease-out, opacity 0.7s ease-out",
+                      "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)", // Custom easing
                   }}
                 />
               </div>
