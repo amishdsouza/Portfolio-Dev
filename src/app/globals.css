@@ -75,6 +75,38 @@
   }
 }
 
+/* Example of custom geometric shapes with clip-path */
+.clip-hexagon {
+  clip-path: polygon(
+       25% 6.7%,
+       75% 6.7%,
+       100% 50%,
+       75% 93.3%,
+       25% 93.3%,
+       0% 50%
+  );
+}
+
+.clip-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.clip-diamond {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.clip-pentagon {
+  clip-path: polygon(50% 0%, 95% 35%, 75% 100%, 25% 100%, 5% 35%);
+}
+
+.clip-circle {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.clip-square {
+  clip-path: inset(0);
+}
+
 @layer utilities {
   /* Container Utility */
   .container {
