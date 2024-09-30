@@ -7,7 +7,7 @@ const nextConfig = {
     );
 
     config.module.rules.push(
-      // Reapply the existing rule, but only for svg imports ending in ?url
+      // Reapply the existing rule, but only for SVG imports ending in ?url
       {
         ...fileLoaderRule,
         test: /\.svg$/i,
@@ -29,7 +29,10 @@ const nextConfig = {
   },
 
   // Enable static HTML export
-  output: 'export', // This enables static HTML export
+  output: "export", // This enables static HTML export
+
+  // Set the base path for GitHub Pages
+  basePath: "/portfolio", // Replace 'portfolio' with your repository name if different
 };
 
 export default nextConfig;

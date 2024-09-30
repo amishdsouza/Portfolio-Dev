@@ -8,6 +8,7 @@ import { Footer } from "@/sections/Footer";
 import { Education } from "@/sections/Education";
 import { Experience } from "@/sections/Experience";
 import { Certification } from "@/sections/Certification";
+import React from "react";
 
 export default function Home() {
   const [showName, setShowName] = useState(false);
