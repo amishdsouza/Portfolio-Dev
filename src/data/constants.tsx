@@ -239,6 +239,7 @@ export const workExperiences = [
   },
 ];
 
+//certifications
 export const CertificationList = [
   {
     technology: "JavaScript",
