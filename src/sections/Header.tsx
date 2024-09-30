@@ -81,7 +81,6 @@ export const Header = ({
                 {item.label}
               </a>
             ))}
-            <button className="btn btn-primary">Contact</button>
           </nav>
 
           {/* Mobile Full-Screen Dropdown Menu */}
@@ -104,18 +103,12 @@ export const Header = ({
                     href={item.href}
                     className={`nav-link text-2xl ${
                       activeSection === item.label ? "text-blue-600" : ""
-                    }`} // Highlight the active link
+                    }`}
                     onClick={handleToggleDropdown}
                   >
                     {item.label}
                   </a>
                 ))}
-                <button
-                  className="btn btn-primary mt-4"
-                  onClick={handleToggleDropdown}
-                >
-                  Contact
-                </button>
               </nav>
             </div>
           </div>
