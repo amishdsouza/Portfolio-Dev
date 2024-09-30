@@ -55,7 +55,7 @@ export const Projects = () => {
       <SectionHeader eyebrow="Projects" title="" description="" />
       {portfolioProjects.map((project, index) => (
         <div
-          key={project.title}
+          key={project.company} // Use company as key
           className="flex"
           ref={(el) => {
             sectionsRef.current[index] = el;
@@ -72,28 +72,22 @@ export const Projects = () => {
               }}
             >
               <div className="w-1/2 rounded-lg p-8 transition-opacity duration-700 ease-in-out">
-                <h2 className="text-6xl font-extrabold mb-8 text-gray-900 leading-tight tracking-tight">
-                  {project.title}
-                </h2>
                 <p className="text-4xl text-gray-700 font-semibold mb-6">
                   {project.company}
                 </p>
-
                 <p className="text-2xl text-gray-700 font-semibold mb-6">
                   {project.year}
                 </p>
-
                 <div className="text-lg space-y-4">
                   {project.results.map((result, idx) => (
                     <p
                       key={idx}
                       className="text-gray-700 font-medium leading-relaxed"
                     >
-                      {result.title}
+                      {result}
                     </p>
                   ))}
                 </div>
-
                 {project.link && (
                   <a
                     href={project.link}
@@ -111,7 +105,7 @@ export const Projects = () => {
               <div className="w-1/2 transition-all duration-700 ease-in-out">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={project.company} // Changed alt text to company
                   className="w-full h-full object-cover rounded-lg shadow-md"
                   style={{
                     opacity: activeIndex === index ? 1 : 0,

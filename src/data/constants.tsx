@@ -298,148 +298,69 @@ export const CertificationList = [
 export const portfolioProjects = [
   {
     company: "Edge Hill University",
-
     year: "2024 - Present",
-
-    title: "Student Admission Portal",
-
     results: [
-      {
-        title:
-          "🚀 Enhanced system versatility and user experience for students and staff",
-      },
-
-      {
-        title:
-          "🔐 Optimized user permissions and secured access for over 150 staff members",
-      },
-
-      {
-        title:
-          "⚙️ Automated business processes, boosting operational efficiency by 25%",
-      },
+      "🎨 Enhanced UI with React for dynamic, and responsive components",
+      "☁️ Leveraged AWS S3 buckets for secure storage and system scalability",
+      "🔍 Used GraphQL and FetchXML for efficient multi-source data querying",
+      "💻 Developed custom features with JavaScript and Node.js to boost user experience",
     ],
-
     link: "https://edgehillacuktest.elluciancrmrecruit.com/Apply/",
-
     image: EHU,
   },
-
   {
     company: "Edge Hill University",
-
     year: "Feb 2023 - Jun 2023",
-
-    title: "Joint Action bart",
-
     results: [
-      {
-        title:
-          "🧠 Innovatively assessed risk-taking behavior with advanced scenario design",
-      },
-
-      {
-        title:
-          "🚀 Reduced development time by 30% through optimized software processes",
-      },
-
-      {
-        title:
-          "⏱ Achieved millisecond-level precision in tracking participant connections",
-      },
+      "🧠 Innovatively assessed risk-taking behavior with advanced scenario design.",
+      "🚀 Reduced development time by 30% through optimized software processes.",
+      "⏱ Achieved millisecond-level precision in tracking participant connections.",
     ],
-
     link: "https://gitlab.pavlovia.org/amishdsouza/jbart-m-d",
-
     image: JBart,
   },
-
   {
     company: "Novigo Solutions",
-
     year: "Feb 2022 - Jul 2022",
-
-    title: "Intertek",
-
     results: [
-      {
-        title:
-          "🔄 Streamlined cargo weighing processes, reducing calculation errors by 40%",
-      },
-
-      {
-        title:
-          "🔐 Enhanced application security with JWT tokens, improving API authorization",
-      },
-
-      {
-        title:
-          "📊 Improved data management and user experience with optimized CRUD functionality",
-      },
+      "🔄 Streamlined cargo weighing processes, reducing calculation errors by 40%.",
+      "🔐 Enhanced application security with JWT tokens, improving API authorization.",
+      "📊 Improved data management and user experience with optimized CRUD functionality.",
     ],
-
     link: "https://www.intertek.com/about/",
-
     image: Intertek,
   },
-
   {
     company: "Personal Projects",
-
     year: "2022",
-
-    title: "Guess the Number Game",
-
     results: [
-      { title: "🎮 Elevated user engagement by 30%" },
-
-      { title: "⚙️ Enhanced algorithm performance by 20%" },
-
-      { title: "📉 Reduced bounce rate by 15%" },
+      "🎮 Elevated user engagement by 30%.",
+      "⚙️ Enhanced algorithm performance by 20%.",
+      "📉 Reduced bounce rate by 15%.",
     ],
-
     link: "https://example.com/guess-number-game",
-
     image: GuessNumber,
   },
-
   {
     company: "Personal Projects",
-
     year: "2021",
-
-    title: "Dice Rolling Game",
-
     results: [
-      { title: "🏆 Boosted user retention by 25%" },
-
-      { title: "🎲 Increased gameplay sessions by 40%" },
-
-      { title: "🔗 Expanded feature set with multiplayer mode" },
+      "🏆 Boosted user retention by 25%.",
+      "🎲 Increased gameplay sessions by 40%.",
+      "🔗 Expanded feature set with multiplayer mode.",
     ],
-
     link: "https://example.com/dice-rolling-game",
-
     image: DiceGame,
   },
-
   {
     company: "Personal Projects",
-
     year: "2023",
-
-    title: "Map Miles Tracker",
-
     results: [
-      { title: "🗺️ Enhanced mapping accuracy by 45%" },
-
-      { title: "📍 Integrated new geolocation features" },
-
-      { title: "✨ Improved user interface and experience" },
+      "🗺️ Enhanced mapping accuracy by 45%.",
+      "📍 Integrated new geolocation features.",
+      "✨ Improved user interface and experience.",
     ],
-
     link: "https://example.com/map-miles-tracker",
-
     image: MapMiles,
   },
 ];

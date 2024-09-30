@@ -28,7 +28,8 @@ const nextConfig = {
     return config;
   },
 
-  // ...other config
+  // Enable static HTML export
+  output: 'export', // This enables static HTML export
 };
 
 export default nextConfig;

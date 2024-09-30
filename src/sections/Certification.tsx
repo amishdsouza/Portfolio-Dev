@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import ArrowUpRightIcon from "@/assets/arrow-right.svg";
-import { CertificationList } from "@/data/constants"; // Ensure this imports the updated list
-import { Card } from "@/components/Card"; // Ensure this component is correctly defined
+import { CertificationList } from "@/data/constants";
+import { Card } from "@/components/Card";
 
 export const Certification = () => {
   const [selectedItem, setSelectedItem] = useState(0);
@@ -54,7 +54,7 @@ export const Certification = () => {
               <div className="lg:grid lg:grid-cols-2 lg:gap-8">
                 <div className="lg:pb-8">
                   <div className="text-gray-700 inline-flex font-bold uppercase tracking-widest text-base">
-                    <span>{content.institution}</span>
+                    <span>{content.instructor}</span>
                     <span className="mx-2"> &bull; </span>{" "}
                     {/* Added spacing between institution and platform */}
                     <span>{content.platform}</span>
