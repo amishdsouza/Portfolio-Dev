@@ -45,18 +45,15 @@ export const Certification = () => {
                 selectedItem === index ? "bg-blue-100" : "bg-white"
               }`}
               style={{
-                top: `calc(64px + ${index * 40}px)`, // Adjust position as needed
+                top: `calc(64px + ${index * 40}px)`,
               }}
               ref={(el) => {
-                sectionsRef.current[index] = el; // Assigning ref to each section
+                sectionsRef.current[index] = el;
               }}
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-8">
                 <div className="lg:pb-8">
                   <div className="text-gray-700 inline-flex font-bold uppercase tracking-widest text-base">
-                    <span>{content.instructor}</span>
-                    <span className="mx-2"> &bull; </span>{" "}
-                    {/* Added spacing between institution and platform */}
                     <span>{content.platform}</span>
                   </div>
 

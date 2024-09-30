@@ -55,7 +55,7 @@ export const Projects = () => {
       <SectionHeader eyebrow="Projects" title="" description="" />
       {portfolioProjects.map((project, index) => (
         <div
-          key={project.company} // Use company as key
+          key={project.company}
           className="flex"
           ref={(el) => {
             sectionsRef.current[index] = el;
@@ -68,7 +68,7 @@ export const Projects = () => {
                 background: backgroundColors[index % backgroundColors.length],
                 opacity: activeIndex === index ? 1 : 0,
                 transform:
-                  activeIndex === index ? "translateY(0)" : "translateY(20px)", // Slight translation for smoother entry
+                  activeIndex === index ? "translateY(0)" : "translateY(20px)",
               }}
             >
               <div className="w-1/2 rounded-lg p-8 transition-opacity duration-700 ease-in-out">
@@ -112,7 +112,7 @@ export const Projects = () => {
                     transform:
                       activeIndex === index ? "scale(1)" : "scale(0.95)",
                     transition:
-                      "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)", // Custom easing
+                      "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)",
                   }}
                 />
               </div>

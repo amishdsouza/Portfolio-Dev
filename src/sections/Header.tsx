@@ -10,7 +10,7 @@ export const Header = ({
   fadeIn?: boolean;
 }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>(""); // Track the active section
+  const [activeSection, setActiveSection] = useState<string>("");
 
   const handleToggleDropdown = () => setIsDropdownOpen((prev) => !prev);
 
@@ -26,7 +26,6 @@ export const Header = ({
     []
   );
 
-  // Track scroll position and update active section
   useEffect(() => {
     const handleScroll = () => {
       const sections = menuItems
@@ -37,7 +36,7 @@ export const Header = ({
         })
         .filter(
           (section): section is { id: string; top: number } => section !== null
-        ); // Filter out null sections
+        );
 
       const currentSection = sections
         .filter((section) => section.top <= window.innerHeight / 2)
@@ -76,7 +75,7 @@ export const Header = ({
                 href={item.href}
                 className={`nav-link ${
                   activeSection === item.label ? "text-blue-600" : ""
-                }`} // Highlight the active link
+                }`}
               >
                 {item.label}
               </a>

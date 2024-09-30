@@ -1,10 +1,6 @@
 import { EducationData } from "@/data/constants";
-
 import { motion } from "framer-motion";
-
 import { SectionHeader } from "@/components/SectionHeader";
-
-// Define different geometric shapes for the background
 
 const geometricDesigns = [
   {
@@ -55,7 +51,7 @@ export const Education = () => {
             />
           </div>
 
-          {/* Right Side with the Cards, Centered */}
+          {/* Right Side with the Cards */}
 
           <div className="w-full lg:w-3/4 flex justify-center">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

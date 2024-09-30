@@ -333,7 +333,7 @@ export const portfolioProjects = [
   },
   {
     company: "Personal Projects",
-    year: "2022",
+    year: "Guess Number",
     results: [
       "🎮 Elevated user engagement by 30%.",
       "⚙️ Enhanced algorithm performance by 20%.",
@@ -344,7 +344,7 @@ export const portfolioProjects = [
   },
   {
     company: "Personal Projects",
-    year: "2021",
+    year: "Dice Game",
     results: [
       "🏆 Boosted user retention by 25%.",
       "🎲 Increased gameplay sessions by 40%.",
@@ -355,7 +355,7 @@ export const portfolioProjects = [
   },
   {
     company: "Personal Projects",
-    year: "2023",
+    year: "Map Miles",
     results: [
       "🗺️ Enhanced mapping accuracy by 45%.",
       "📍 Integrated new geolocation features.",
