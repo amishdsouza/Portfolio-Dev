@@ -351,7 +351,7 @@ export const portfolioProjects = [
       "💻 Responsive design ensures smooth gameplay across devices.",
     ],
     link: "https://amishdsouza.github.io/DiceGame/",
-    image: "DiceGame",
+    image: DiceGame,
   },
   {
     company: "Personal Projects",
